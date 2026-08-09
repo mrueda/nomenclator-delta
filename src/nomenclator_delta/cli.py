@@ -26,10 +26,16 @@ def main(argv: list[str] | None = None) -> None:
     collect_parser.add_argument("--source-root", type=Path, default=Path("sources"))
     collect_parser.add_argument("--url", default=DEFAULT_CSV_URL)
 
-    build_parser = commands.add_parser("build", help="Build one snapshot comparison")
+    build_parser = commands.add_parser(
+        "build", help="Build or append one monthly snapshot comparison"
+    )
     build_parser.add_argument("--from", dest="from_snapshot", required=True)
     build_parser.add_argument("--to", dest="to_snapshot", required=True)
-    build_parser.add_argument("--from-source", type=Path, required=True)
+    build_parser.add_argument(
+        "--from-source",
+        type=Path,
+        help="Older raw CSV (required only when creating a new dataset)",
+    )
     build_parser.add_argument("--to-source", type=Path, required=True)
     build_parser.add_argument("--from-metadata", type=Path)
     build_parser.add_argument("--to-metadata", type=Path)
@@ -59,7 +65,7 @@ def main(argv: list[str] | None = None) -> None:
             to_metadata=args.to_metadata,
             minimum_records=args.minimum_records,
         )
-        print(f"Built {metadata['transitions'][0]} into {args.output}")
+        print(f"Built {metadata['transitions'][-1]} into {args.output}")
     elif args.command == "validate":
         errors = validate_dataset(args.root)
         if errors:

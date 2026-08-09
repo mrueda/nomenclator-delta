@@ -1,5 +1,24 @@
 [
   {
+    "added": 37,
+    "change_events": 308,
+    "changed_products": 148,
+    "counts_by_type": {
+      "LISTING_DATE_CHANGED": 2,
+      "NAME_CHANGED": 13,
+      "PRICE_CHANGED": 73,
+      "PRODUCT_ADDED": 37,
+      "PRODUCT_REMOVED": 48,
+      "REMOVAL_DATE_CHANGED": 59,
+      "STATUS_CHANGED": 76
+    },
+    "from_product_count": 20532,
+    "from_snapshot": "2026-06",
+    "removed": 48,
+    "to_product_count": 20521,
+    "to_snapshot": "2026-07"
+  },
+  {
     "added": 75,
     "change_events": 341,
     "changed_products": 187,

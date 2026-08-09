@@ -1,0 +1,139 @@
+{
+  "cn": "698209",
+  "current": {
+    "active_ingredients": [
+      "DILTIAZEM HIDROCLORURO"
+    ],
+    "contribution": "ESPECIAL",
+    "laboratory": {
+      "code": "805",
+      "name": "STADA, S.L"
+    },
+    "medicine_name": "DILTIAZEM RETARD STADA 200 MG CAPSULAS DURAS DE LIBERACION PROLONGADA EFG . 28 capsulas",
+    "prices": {
+      "homogeneous_group_minimum": null,
+      "reference": "14.21",
+      "retail_with_vat": "14.21"
+    },
+    "status": "BAJA POR NO COMERCIALIZAR"
+  },
+  "events": [
+    {
+      "after": "2026-07-01",
+      "before": null,
+      "change_label_es": "Cambio de fecha de baja",
+      "change_type": "REMOVAL_DATE_CHANGED",
+      "cn": "698209",
+      "field": "listed_until",
+      "field_label_es": "Fecha de baja en el nomenclátor",
+      "from_snapshot": "2026-06",
+      "id": "2026-06_to_2026-07:698209:REMOVAL_DATE_CHANGED:1",
+      "source": {
+        "authority": "Ministerio de Sanidad",
+        "from_snapshot": "2026-06",
+        "official_source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do",
+        "to_snapshot": "2026-07"
+      },
+      "to_snapshot": "2026-07"
+    },
+    {
+      "after": "BAJA POR NO COMERCIALIZAR",
+      "before": "ALTA",
+      "change_label_es": "Cambio de estado",
+      "change_type": "STATUS_CHANGED",
+      "cn": "698209",
+      "field": "status",
+      "field_label_es": "Estado",
+      "from_snapshot": "2026-06",
+      "id": "2026-06_to_2026-07:698209:STATUS_CHANGED:0",
+      "source": {
+        "authority": "Ministerio de Sanidad",
+        "from_snapshot": "2026-06",
+        "official_source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do",
+        "to_snapshot": "2026-07"
+      },
+      "to_snapshot": "2026-07"
+    }
+  ],
+  "snapshots": [
+    {
+      "snapshot": "2026-06",
+      "state": {
+        "active_ingredients": [
+          "DILTIAZEM HIDROCLORURO"
+        ],
+        "contribution": "ESPECIAL",
+        "laboratory": {
+          "code": "805",
+          "name": "STADA, S.L"
+        },
+        "medicine_name": "DILTIAZEM RETARD STADA 200 MG CAPSULAS DURAS DE LIBERACION PROLONGADA EFG . 28 capsulas",
+        "prices": {
+          "homogeneous_group_minimum": null,
+          "reference": "14.21",
+          "retail_with_vat": "14.21"
+        },
+        "status": "ALTA"
+      }
+    },
+    {
+      "snapshot": "2026-07",
+      "state": {
+        "active_ingredients": [
+          "DILTIAZEM HIDROCLORURO"
+        ],
+        "contribution": "ESPECIAL",
+        "laboratory": {
+          "code": "805",
+          "name": "STADA, S.L"
+        },
+        "medicine_name": "DILTIAZEM RETARD STADA 200 MG CAPSULAS DURAS DE LIBERACION PROLONGADA EFG . 28 capsulas",
+        "prices": {
+          "homogeneous_group_minimum": null,
+          "reference": "14.21",
+          "retail_with_vat": "14.21"
+        },
+        "status": "BAJA POR NO COMERCIALIZAR"
+      }
+    }
+  ],
+  "sources": {
+    "2026-06": {
+      "archive_capture_timestamp": "20260627101708",
+      "archive_replay_url": "https://web.archive.org/web/20260627101708id_/https://www.sanidad.gob.es/profesionales/nomenclator.do?metodo=nomenclatorExcel",
+      "archive_retrieved_at": "2026-08-09T13:23:19Z",
+      "archive_transport": "Internet Archive Wayback Machine",
+      "archive_transport_role": "archive transport only; Ministerio de Sanidad is the data authority",
+      "authority": "Ministerio de Sanidad",
+      "derivation": "XLS PRODUCTOS sheet to Ministry-compatible UTF-8 CSV; trimmed cells and canonicalized three legacy headers",
+      "derivation_control": "The same conversion reproduced the official August 2026 CSV byte-for-byte",
+      "derived_from_file_size": 7263232,
+      "derived_from_format": "official XLS",
+      "derived_from_original_filename": "20260627_Nomenclator_de_Facturacion.xls",
+      "derived_from_sha256": "0d9b293a0f8caacc951d4ace1f10f9fda0bb68cccf456f509eff661483c2989a",
+      "exact_original_csv_bytes_preserved": false,
+      "file_size": 4497814,
+      "mime_type": "text/csv; charset=UTF-8",
+      "original_filename": "20260627_Nomenclator_de_Facturacion.reconstructed.csv",
+      "parser_version": "1",
+      "retrieved_at": "2026-06-27T10:17:08Z",
+      "sha256": "6a28f4b2022e3d8e106f9169f897fa3b06c4132fefb1b5c1a23ea36146674fe9",
+      "snapshot": "2026-06",
+      "snapshot_evidence_url": "https://web.archive.org/web/20260627101649id_/https://www.sanidad.gob.es/profesionales/nomenclator.do",
+      "source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do?metodo=nomenclatorExcel"
+    },
+    "2026-07": {
+      "archive_record_id": "urn:uuid:019f6936-758e-7654-86fd-1cc7c9605dce",
+      "archive_transport": "Common Crawl CC-MAIN-2026-30",
+      "authority": "Ministerio de Sanidad",
+      "file_size": 4495234,
+      "mime_type": "text/csv; charset=UTF-8",
+      "original_filename": "20260716_Nomenclator_de_Facturacion.csv",
+      "parser_version": "1",
+      "retrieved_at": "2026-07-16T04:36:44Z",
+      "sha256": "8c4adf496667b966acf0b029b14cfc31eefe87916372e8f2de9a90453293be90",
+      "snapshot": "2026-07",
+      "source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do?metodo=buscarProductos&especialidad=%25%25%25&d-4015021-e=1&6578706f7274=1%20%C2%A0"
+    }
+  }
+}

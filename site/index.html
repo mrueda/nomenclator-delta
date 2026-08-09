@@ -11,16 +11,16 @@
   <body>
     <header class="topbar">
       <a class="brand" href="#inicio" aria-label="Ir al inicio de nomenclator-delta">
-        <span class="brand-mark" aria-hidden="true">Δ</span>
+        <img class="brand-mark" src="favicon.svg" alt="" aria-hidden="true">
         <span>
           <strong>nomenclator-delta</strong>
           <small>Qué cambió en el Nomenclátor</small>
         </span>
       </a>
       <nav aria-label="Navegación principal">
-        <button class="nav-button is-active" data-view="changes" type="button">Cambios</button>
-        <button class="nav-button" data-view="added" type="button">Altas</button>
-        <button class="nav-button" data-view="removed" type="button">Bajas</button>
+        <button class="nav-button is-active" data-view="changes" type="button" aria-pressed="true">Cambios</button>
+        <button class="nav-button" data-view="added" type="button" aria-pressed="false">Altas</button>
+        <button class="nav-button" data-view="removed" type="button" aria-pressed="false">Bajas</button>
       </nav>
       <a class="source-link" href="https://www.sanidad.gob.es/profesionales/nomenclator.do" target="_blank" rel="noopener noreferrer">Fuente oficial ↗</a>
     </header>
@@ -33,8 +33,10 @@
           <p>Busca por Código Nacional, nombre, principio activo o laboratorio. Los resultados comparan dos publicaciones mensuales del Nomenclátor de facturación.</p>
         </div>
         <div class="period-card" aria-live="polite">
-          <span>Comparación disponible</span>
-          <strong id="comparisonPeriod">Cargando…</strong>
+          <span id="periodLabel">Periodo comparado</span>
+          <div id="periodTabs" class="period-tabs" role="group" aria-labelledby="periodLabel" aria-busy="true">
+            <span class="period-loading">Cargando…</span>
+          </div>
           <small id="datasetStatus">Preparando el índice de búsqueda</small>
         </div>
       </section>
@@ -44,7 +46,7 @@
         <div class="search-row">
           <span class="search-icon" aria-hidden="true">⌕</span>
           <input id="searchInput" type="search" autocomplete="off" placeholder="Ej. 700579, brivaracetam, STADA…">
-          <button id="clearSearch" type="button">Limpiar</button>
+          <button id="clearSearch" type="button" aria-label="Restablecer búsqueda, filtros, periodo y selección">Restablecer</button>
         </div>
         <div class="filter-row">
           <label>
@@ -54,11 +56,11 @@
             </select>
           </label>
           <label>
-            <span>Situación en el último mes</span>
+            <span>Situación en el índice más reciente</span>
             <select id="presenceFilter">
               <option value="">Todas</option>
-              <option value="present">Presentes en el último Nomenclátor</option>
-              <option value="absent">Ausentes en el último Nomenclátor</option>
+              <option value="present">Presentes en el índice más reciente</option>
+              <option value="absent">Ausentes en el índice más reciente</option>
             </select>
           </label>
         </div>

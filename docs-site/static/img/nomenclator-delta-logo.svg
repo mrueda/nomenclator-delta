@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="logo-title logo-desc">
+  <title id="logo-title">nomenclator-delta logo</title>
+  <desc id="logo-desc">Two overlapping monthly publications and a delta representing their changes.</desc>
+
+  <rect width="1024" height="1024" rx="196" fill="#f8faf7"/>
+
+  <!-- Previous monthly snapshot. -->
+  <path
+    d="M180 265c0-55 45-100 100-100h313l151 151v374c0 55-45 100-100 100H280c-55 0-100-45-100-100V265Z"
+    fill="#dff3e9"
+    stroke="#0a4639"
+    stroke-width="38"
+    stroke-linejoin="round"
+  />
+  <path d="M593 165v100c0 28 23 51 51 51h100" fill="#b9dfcf" stroke="#0a4639" stroke-width="38" stroke-linejoin="round"/>
+
+  <!-- Current monthly snapshot. -->
+  <path
+    d="M318 344c0-55 45-100 100-100h313l151 151v374c0 55-45 100-100 100H418c-55 0-100-45-100-100V344Z"
+    fill="#126754"
+    stroke="#0a4639"
+    stroke-width="38"
+    stroke-linejoin="round"
+  />
+
+  <!-- Highlighted revision corner. -->
+  <path
+    d="M731 244v100c0 28 23 51 51 51h100L731 244Z"
+    fill="#e3a44a"
+    stroke="#0a4639"
+    stroke-width="38"
+    stroke-linejoin="round"
+  />
+
+  <!-- Delta, drawn as a solid shape for clarity at small sizes. -->
+  <path
+    d="M599 407 416 767h366L599 407Zm0 130 86 169H513l86-169Z"
+    fill="#f8faf7"
+    fill-rule="evenodd"
+  />
+</svg>

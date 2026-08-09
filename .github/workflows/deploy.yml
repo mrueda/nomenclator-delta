@@ -1,10 +1,10 @@
-name: Deploy GitHub Pages
+name: Deploy documentation and app
 
 on:
   push:
     branches: [main]
   schedule:
-    - cron: "17 5 * * *"
+    - cron: "17 5 1 * *"
   workflow_dispatch:
 
 permissions:
@@ -17,10 +17,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -29,18 +26,44 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Install package
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: docs-site/package-lock.json
+      - name: Install Python package
         run: python -m pip install -e .
       - name: Validate committed static data
         run: python -m nomenclator_delta validate data
-      - name: Package site without rebuilding historical data
-        run: python -m nomenclator_delta dist
+      - name: Install documentation dependencies
+        run: npm ci
+        working-directory: docs-site
+      - name: Type-check documentation
+        run: npm run typecheck
+        working-directory: docs-site
+      - name: Build documentation and embedded app
+        run: npm run build
+        working-directory: docs-site
+      - name: Verify complete static output
+        run: |
+          test -f docs-site/build/search-index.json
+          test -f docs-site/build/app/index.html
+          test -f docs-site/build/app/data/metadata.json
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: docs-site/build
+
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

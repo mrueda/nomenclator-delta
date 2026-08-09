@@ -37,3 +37,37 @@ jobs:
         run: python -m nomenclator_delta validate data
       - name: Build deployable static directory
         run: python -m nomenclator_delta dist
+
+  documentation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: docs-site/package-lock.json
+      - name: Install Python package
+        run: python -m pip install -e .
+      - name: Validate committed data
+        run: python -m nomenclator_delta validate data
+      - name: Install documentation dependencies
+        run: npm ci
+        working-directory: docs-site
+      - name: Type-check documentation
+        run: npm run typecheck
+        working-directory: docs-site
+      - name: Build documentation and embedded app
+        run: npm run build
+        working-directory: docs-site
+      - name: Verify complete static output
+        run: |
+          test -f docs-site/build/search-index.json
+          test -f docs-site/build/app/index.html
+          test -f docs-site/build/app/data/metadata.json

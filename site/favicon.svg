@@ -1,4 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="18" fill="#126754"/>
-  <path d="M18 47 31.8 15 46 47H18Zm6.9-4h14.9l-8-19.1L24.9 43Z" fill="#fff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="favicon-title">
+  <title id="favicon-title">nomenclator-delta</title>
+  <rect x="1" y="1" width="62" height="62" rx="15" fill="#f8faf7" stroke="#0a4639" stroke-width="2"/>
+  <path d="M10 17a6 6 0 0 1 6-6h19l9 9v24a6 6 0 0 1-6 6H16a6 6 0 0 1-6-6V17Z" fill="#dff3e9" stroke="#0a4639" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M35 11v6a3 3 0 0 0 3 3h6" fill="#b9dfcf" stroke="#0a4639" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M19 22a6 6 0 0 1 6-6h19l9 9v24a6 6 0 0 1-6 6H25a6 6 0 0 1-6-6V22Z" fill="#126754" stroke="#0a4639" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M44 16v6a3 3 0 0 0 3 3h6l-9-9Z" fill="#e3a44a" stroke="#0a4639" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="m36 28-9 19h18l-9-19Zm0 7 3.7 7.5h-7.4L36 35Z" fill="#f8faf7" fill-rule="evenodd"/>
 </svg>

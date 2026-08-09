@@ -1,0 +1,377 @@
+.page {
+  --forest: #0a4639;
+  --green: #126754;
+  --paper: #f5f7fa;
+  --surface: #ffffff;
+  --line: #d8e0e8;
+  --ink: #18202a;
+  --muted: #617082;
+  --copper: #bc5d2d;
+  min-height: calc(100vh - var(--ifm-navbar-height));
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(4rem, 8vw, 6.5rem) 1.5rem clamp(3.5rem, 6vw, 5rem);
+  background:
+    linear-gradient(90deg, rgba(18, 103, 84, 0.045) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(18, 103, 84, 0.045) 1px, transparent 1px),
+    linear-gradient(135deg, #fbfcfd 0%, #f2f6f5 58%, #fff8ef 100%);
+  background-size: 40px 40px, 40px 40px, auto;
+  color: var(--ink);
+}
+
+.hero::after {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 78% 20%, rgba(18, 103, 84, 0.08), transparent 24rem);
+  content: '';
+  pointer-events: none;
+}
+
+.delta {
+  position: absolute;
+  top: -9rem;
+  right: -2rem;
+  color: rgba(188, 93, 45, 0.045);
+  font-size: 44rem;
+  font-weight: 700;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.heroGrid,
+.section {
+  width: min(1160px, 100%);
+  margin: 0 auto;
+}
+
+.heroGrid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(350px, 0.92fr);
+  gap: clamp(2.5rem, 7vw, 6rem);
+  align-items: center;
+}
+
+.kicker,
+.sectionHeader p {
+  margin: 0 0 0.8rem;
+  color: var(--green);
+  font-size: 0.76rem;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.copy h1 {
+  max-width: 720px;
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(2.8rem, 4.4vw, 3.45rem);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.lede {
+  max-width: 690px;
+  margin: 1.5rem 0 2rem;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.actions :global(.button--primary) {
+  border-color: var(--green);
+  background: var(--green);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(18, 103, 84, 0.2);
+}
+
+.actions :global(.button--primary:hover) {
+  border-color: var(--forest);
+  background: var(--forest);
+  color: #fff;
+}
+
+.actions :global(.button--secondary) {
+  border-color: rgba(18, 103, 84, 0.35);
+  background: #fff;
+  color: var(--forest);
+}
+
+.actions :global(.button--secondary:hover) {
+  border-color: var(--green);
+  background: #eef7f3;
+  color: var(--forest);
+}
+
+.diffPanel {
+  position: relative;
+  display: grid;
+  gap: 0.8rem;
+  padding: 1rem;
+  border: 1px solid #2c3743;
+  border-radius: 12px;
+  background: #18202a;
+  box-shadow: 0 24px 56px rgba(24, 32, 42, 0.24);
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.2rem 0.2rem 0.5rem;
+}
+
+.panelHeader img {
+  width: 48px;
+  height: 48px;
+  border-radius: 13px;
+}
+
+.panelHeader div {
+  display: grid;
+  min-width: 0;
+}
+
+.panelHeader strong {
+  color: #fff;
+  font-size: 0.94rem;
+}
+
+.panelHeader span {
+  color: #9aa6b2;
+  font-size: 0.72rem;
+}
+
+.panelHeader i {
+  width: 8px;
+  height: 8px;
+  margin-left: auto;
+  border-radius: 50%;
+  background: #68c5a5;
+  box-shadow: 0 0 0 5px rgba(104, 197, 165, 0.12);
+}
+
+.columnLabels,
+.previewRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.8fr 0.8fr;
+  gap: 0.45rem;
+}
+
+.columnLabels {
+  padding: 0 0.45rem;
+  color: #8d99a5;
+  font-size: 0.61rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.previewTable {
+  display: grid;
+  gap: 0.42rem;
+}
+
+.previewRow span {
+  min-width: 0;
+  overflow: hidden;
+  padding: 0.62rem 0.56rem;
+  border: 1px solid #35404b;
+  border-radius: 6px;
+  background: #222b35;
+  color: #d3dae0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.72rem;
+  font-weight: 650;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.previewRow span:first-child {
+  color: #9ed9c4;
+}
+
+.previewRow .after {
+  border-color: rgba(104, 197, 165, 0.35);
+  background: rgba(18, 103, 84, 0.38);
+  color: #c4ecdd;
+}
+
+.statusRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  padding-top: 0.15rem;
+}
+
+.statusRow span {
+  padding: 0.34rem 0.56rem;
+  border: 1px solid #3b4651;
+  border-radius: 999px;
+  color: #bdc6ce;
+  font-size: 0.65rem;
+  font-weight: 750;
+}
+
+.section {
+  padding: clamp(4rem, 7vw, 6rem) 1.5rem;
+}
+
+.developerSection {
+  padding-top: 0;
+}
+
+.sectionHeader {
+  display: grid;
+  grid-template-columns: 0.62fr 1.38fr;
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.sectionHeader p {
+  color: var(--green);
+}
+
+.sectionHeader h2 {
+  max-width: 720px;
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.8rem, 3.3vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.card {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  min-height: 230px;
+  padding: 1.4rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--ink);
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(24, 32, 42, 0.055);
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.card::after {
+  position: absolute;
+  right: -2rem;
+  bottom: -4.8rem;
+  color: rgba(188, 93, 45, 0.04);
+  content: 'Δ';
+  font-size: 11rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.card:hover {
+  border-color: rgba(18, 103, 84, 0.38);
+  color: var(--ink);
+  text-decoration: none;
+  box-shadow: 0 16px 34px rgba(24, 32, 42, 0.1);
+  transform: translateY(-3px);
+}
+
+.card > span {
+  color: var(--copper);
+  font-size: 0.69rem;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.card h3 {
+  margin: 0.6rem 0;
+  color: var(--ink);
+  font-size: 1.18rem;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.91rem;
+  line-height: 1.6;
+}
+
+.card b {
+  position: relative;
+  z-index: 1;
+  margin-top: 1rem;
+  color: var(--green);
+  font-size: 1.25rem;
+}
+
+@media (max-width: 900px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .diffPanel {
+    max-width: 620px;
+  }
+
+  .cardGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding-top: 4rem;
+  }
+
+  .copy h1 {
+    font-size: 2.75rem;
+  }
+
+  .sectionHeader {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .columnLabels {
+    display: none;
+  }
+
+  .previewRow {
+    grid-template-columns: 0.8fr 1.2fr 1fr 1fr;
+  }
+
+  .previewRow span {
+    padding-inline: 0.42rem;
+    font-size: 0.63rem;
+  }
+}
