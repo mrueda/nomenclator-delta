@@ -60,6 +60,8 @@ nav { display: flex; gap: 0.3rem; }
 .nav-button { border: 0; border-radius: 999px; padding: 0.55rem 0.9rem; color: var(--muted); background: transparent; cursor: pointer; }
 .nav-button:hover { color: var(--ink); background: #eef2f5; }
 .nav-button.is-active { color: white; background: var(--primary); }
+.docs-link { padding: 0.48rem 0.72rem; border: 1px solid var(--line); border-radius: 999px; color: var(--primary-dark); background: var(--surface); font-size: 0.84rem; font-weight: 700; text-decoration: none; }
+.docs-link:hover { border-color: #9eb6ae; background: var(--primary-soft); }
 .source-link { color: var(--primary-dark); font-size: 0.86rem; font-weight: 700; text-decoration: none; }
 
 main { width: min(1280px, calc(100% - 2rem)); margin: 0 auto; }
