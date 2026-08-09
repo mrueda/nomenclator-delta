@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Historial de cambios del Nomenclátor de facturación del Ministerio de Sanidad.">
+    <title>nomenclator-delta · Cambios del Nomenclátor</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio de nomenclator-delta">
+        <span class="brand-mark" aria-hidden="true">Δ</span>
+        <span>
+          <strong>nomenclator-delta</strong>
+          <small>Qué cambió en el Nomenclátor</small>
+        </span>
+      </a>
+      <nav aria-label="Navegación principal">
+        <button class="nav-button is-active" data-view="changes" type="button">Cambios</button>
+        <button class="nav-button" data-view="added" type="button">Altas</button>
+        <button class="nav-button" data-view="removed" type="button">Bajas</button>
+      </nav>
+      <a class="source-link" href="https://www.sanidad.gob.es/profesionales/nomenclator.do" target="_blank" rel="noopener noreferrer">Fuente oficial ↗</a>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-copy">
+          <p class="eyebrow">Comparador mensual · datos oficiales</p>
+          <h1>Encuentra qué cambió para una presentación.</h1>
+          <p>Busca por Código Nacional, nombre, principio activo o laboratorio. Los resultados comparan dos publicaciones mensuales del Nomenclátor de facturación.</p>
+        </div>
+        <div class="period-card" aria-live="polite">
+          <span>Comparación disponible</span>
+          <strong id="comparisonPeriod">Cargando…</strong>
+          <small id="datasetStatus">Preparando el índice de búsqueda</small>
+        </div>
+      </section>
+
+      <section class="search-panel" aria-label="Buscar presentaciones">
+        <label for="searchInput">Código Nacional, medicamento, principio activo o laboratorio</label>
+        <div class="search-row">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input id="searchInput" type="search" autocomplete="off" placeholder="Ej. 700579, brivaracetam, STADA…">
+          <button id="clearSearch" type="button">Limpiar</button>
+        </div>
+        <div class="filter-row">
+          <label>
+            <span>Tipo de cambio</span>
+            <select id="changeFilter">
+              <option value="">Todos los cambios</option>
+            </select>
+          </label>
+          <label>
+            <span>Situación en el último mes</span>
+            <select id="presenceFilter">
+              <option value="">Todas</option>
+              <option value="present">Presentes en el último Nomenclátor</option>
+              <option value="absent">Ausentes en el último Nomenclátor</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <section class="stats" aria-label="Resumen de cambios">
+        <article><span>Altas</span><strong id="addedCount">—</strong><small>presentaciones nuevas</small></article>
+        <article><span>Bajas</span><strong id="removedCount">—</strong><small>presentaciones ausentes</small></article>
+        <article><span>Modificadas</span><strong id="changedCount">—</strong><small>presentaciones existentes</small></article>
+        <article><span>Cambios de precio</span><strong id="priceCount">—</strong><small>campos de precio</small></article>
+      </section>
+
+      <section class="content-grid">
+        <div class="results-column">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow" id="viewEyebrow">Cambios materiales</p>
+              <h2 id="resultsTitle">Presentaciones con cambios</h2>
+            </div>
+            <p id="resultCount" aria-live="polite">—</p>
+          </div>
+          <div id="results" class="results" aria-live="polite"></div>
+        </div>
+
+        <aside id="detailPanel" class="detail-panel" aria-live="polite">
+          <div class="detail-placeholder">
+            <span aria-hidden="true">Δ</span>
+            <h2>Selecciona una presentación</h2>
+            <p>Aquí verás el estado actual, el historial y los valores anteriores y posteriores.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="method-note">
+        <div>
+          <p class="eyebrow">Cómo leer estos datos</p>
+          <h2>Una diferencia observada, no una recomendación.</h2>
+        </div>
+        <p>«Alta» y «baja» describen la presencia de un Código Nacional entre las dos exportaciones comparadas. La aplicación no interpreta recetas ni ofrece recomendaciones de dispensación, financiación, sustitución, seguridad o tratamiento.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p id="disclaimer">nomenclator-delta reorganiza y compara datos oficiales de acceso público.</p>
+      <p>El Nomenclátor y las publicaciones del Ministerio de Sanidad siguen siendo la fuente autorizada.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

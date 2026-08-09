@@ -1,0 +1,108 @@
+{
+  "cn": "704287",
+  "current": {
+    "active_ingredients": [
+      "PAROXETINA HIDROCLORURO"
+    ],
+    "contribution": "ESPECIAL",
+    "laboratory": {
+      "code": "805",
+      "name": "STADA, S.L"
+    },
+    "medicine_name": "PAROXETINA STADA 10 MG COMPRIMIDOS EFG 30 comprimidos",
+    "prices": {
+      "homogeneous_group_minimum": "3.26",
+      "reference": "3.26",
+      "retail_with_vat": "3.26"
+    },
+    "status": "ALTA"
+  },
+  "events": [
+    {
+      "after": "PAROXETINA STADA 10 MG COMPRIMIDOS EFG 30 comprimidos",
+      "before": "PAROXETINA STADAGEN 10 mg COMPRIMIDOS EFG 30 comprimidos",
+      "change_label_es": "Cambio de nombre",
+      "change_type": "NAME_CHANGED",
+      "cn": "704287",
+      "field": "medicine_name",
+      "field_label_es": "Nombre del producto farmacéutico",
+      "from_snapshot": "2026-07",
+      "id": "2026-07_to_2026-08:704287:NAME_CHANGED:0",
+      "source": {
+        "authority": "Ministerio de Sanidad",
+        "from_snapshot": "2026-07",
+        "official_source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do",
+        "to_snapshot": "2026-08"
+      },
+      "to_snapshot": "2026-08"
+    }
+  ],
+  "snapshots": [
+    {
+      "snapshot": "2026-07",
+      "state": {
+        "active_ingredients": [
+          "PAROXETINA HIDROCLORURO"
+        ],
+        "contribution": "ESPECIAL",
+        "laboratory": {
+          "code": "805",
+          "name": "STADA, S.L"
+        },
+        "medicine_name": "PAROXETINA STADAGEN 10 mg COMPRIMIDOS EFG 30 comprimidos",
+        "prices": {
+          "homogeneous_group_minimum": "3.26",
+          "reference": "3.26",
+          "retail_with_vat": "3.26"
+        },
+        "status": "ALTA"
+      }
+    },
+    {
+      "snapshot": "2026-08",
+      "state": {
+        "active_ingredients": [
+          "PAROXETINA HIDROCLORURO"
+        ],
+        "contribution": "ESPECIAL",
+        "laboratory": {
+          "code": "805",
+          "name": "STADA, S.L"
+        },
+        "medicine_name": "PAROXETINA STADA 10 MG COMPRIMIDOS EFG 30 comprimidos",
+        "prices": {
+          "homogeneous_group_minimum": "3.26",
+          "reference": "3.26",
+          "retail_with_vat": "3.26"
+        },
+        "status": "ALTA"
+      }
+    }
+  ],
+  "sources": {
+    "2026-07": {
+      "archive_record_id": "urn:uuid:019f6936-758e-7654-86fd-1cc7c9605dce",
+      "archive_transport": "Common Crawl CC-MAIN-2026-30",
+      "authority": "Ministerio de Sanidad",
+      "file_size": 4495234,
+      "mime_type": "text/csv; charset=UTF-8",
+      "original_filename": "20260716_Nomenclator_de_Facturacion.csv",
+      "parser_version": "1",
+      "retrieved_at": "2026-07-16T04:36:44Z",
+      "sha256": "8c4adf496667b966acf0b029b14cfc31eefe87916372e8f2de9a90453293be90",
+      "snapshot": "2026-07",
+      "source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do?metodo=buscarProductos&especialidad=%25%25%25&d-4015021-e=1&6578706f7274=1%20%C2%A0"
+    },
+    "2026-08": {
+      "authority": "Ministerio de Sanidad",
+      "file_size": 4504324,
+      "mime_type": "text/csv; charset=UTF-8",
+      "original_filename": "20260809_Nomenclator_de_Facturacion.csv",
+      "parser_version": "1",
+      "retrieved_at": "2026-08-09T12:49:33Z",
+      "sha256": "2af18bec6e7005e0bb6c34fede8e6ec13f717b71998fef1cc87ffce65d05df84",
+      "snapshot": "2026-08",
+      "source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do?metodo=buscarProductos&especialidad=%25%25%25&d-4015021-e=1&6578706f7274=1%20%C2%A0"
+    }
+  }
+}

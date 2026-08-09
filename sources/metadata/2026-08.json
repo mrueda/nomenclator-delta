@@ -1,0 +1,11 @@
+{
+  "authority": "Ministerio de Sanidad",
+  "file_size": 4504324,
+  "mime_type": "text/csv; charset=UTF-8",
+  "original_filename": "20260809_Nomenclator_de_Facturacion.csv",
+  "parser_version": "1",
+  "retrieved_at": "2026-08-09T12:49:33Z",
+  "sha256": "2af18bec6e7005e0bb6c34fede8e6ec13f717b71998fef1cc87ffce65d05df84",
+  "snapshot": "2026-08",
+  "source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do?metodo=buscarProductos&especialidad=%25%25%25&d-4015021-e=1&6578706f7274=1%20%C2%A0"
+}

@@ -1,0 +1,8 @@
+{
+  "authority": "Ministerio de Sanidad",
+  "landing_page_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do",
+  "csv_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do?metodo=buscarProductos&especialidad=%25%25%25&d-4015021-e=1&6578706f7274=1%20%C2%A0",
+  "parser_version": "1",
+  "minimum_records": 15000,
+  "maximum_monthly_count_change_ratio": 0.2
+}

@@ -1,0 +1,18 @@
+{
+  "authority": "Ministerio de Sanidad",
+  "current_product_count": 20559,
+  "data_as_of": "2026-08",
+  "disclaimer_es": "nomenclator-delta es un proyecto independiente de código abierto que reorganiza y compara datos oficiales de acceso público. No está afiliado ni respaldado por el Ministerio de Sanidad. El Nomenclátor y las publicaciones oficiales siguen siendo la fuente autorizada.",
+  "latest_snapshot": "2026-08",
+  "official_source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do",
+  "product_count": 20596,
+  "project": "nomenclator-delta",
+  "schema_version": 1,
+  "snapshots": [
+    "2026-07",
+    "2026-08"
+  ],
+  "transitions": [
+    "2026-07_to_2026-08"
+  ]
+}

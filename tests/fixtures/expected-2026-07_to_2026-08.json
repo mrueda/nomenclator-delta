@@ -1,0 +1,95 @@
+{
+  "events": [
+    {
+      "after": "9.5",
+      "before": "10",
+      "change_label_es": "Cambio de precio",
+      "change_type": "PRICE_CHANGED",
+      "cn": "123456",
+      "field": "prices.retail_with_vat",
+      "field_label_es": "Precio de venta al público con IVA",
+      "from_snapshot": "2026-07",
+      "id": "2026-07_to_2026-08:123456:PRICE_CHANGED:0",
+      "source": {
+        "authority": "Ministerio de Sanidad",
+        "from_snapshot": "2026-07",
+        "official_source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do",
+        "to_snapshot": "2026-08"
+      },
+      "to_snapshot": "2026-08"
+    },
+    {
+      "after": null,
+      "before": {
+        "active_ingredients": ["BETA"],
+        "contribution": "ESPECIAL",
+        "laboratory": {"code": "20", "name": "LABORATORIO DOS, S.L."},
+        "medicine_name": "MEDICAMENTO BETA 5 MG, 30 comprimidos",
+        "prices": {
+          "homogeneous_group_minimum": null,
+          "reference": null,
+          "retail_with_vat": "5.25"
+        },
+        "status": "ALTA"
+      },
+      "change_label_es": "Baja en la comparación",
+      "change_type": "PRODUCT_REMOVED",
+      "cn": "234567",
+      "field": null,
+      "field_label_es": "Presentación",
+      "from_snapshot": "2026-07",
+      "id": "2026-07_to_2026-08:234567:PRODUCT_REMOVED:0",
+      "source": {
+        "authority": "Ministerio de Sanidad",
+        "from_snapshot": "2026-07",
+        "official_source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do",
+        "to_snapshot": "2026-08"
+      },
+      "to_snapshot": "2026-08"
+    },
+    {
+      "after": {
+        "active_ingredients": ["DELTA"],
+        "contribution": "NORMAL",
+        "laboratory": {"code": "40", "name": "LABORATORIO CUATRO"},
+        "medicine_name": "MEDICAMENTO DELTA 20 MG, 28 comprimidos",
+        "prices": {
+          "homogeneous_group_minimum": null,
+          "reference": null,
+          "retail_with_vat": "12"
+        },
+        "status": "ALTA"
+      },
+      "before": null,
+      "change_label_es": "Alta en la comparación",
+      "change_type": "PRODUCT_ADDED",
+      "cn": "456789",
+      "field": null,
+      "field_label_es": "Presentación",
+      "from_snapshot": "2026-07",
+      "id": "2026-07_to_2026-08:456789:PRODUCT_ADDED:0",
+      "source": {
+        "authority": "Ministerio de Sanidad",
+        "from_snapshot": "2026-07",
+        "official_source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do",
+        "to_snapshot": "2026-08"
+      },
+      "to_snapshot": "2026-08"
+    }
+  ],
+  "summary": {
+    "added": 1,
+    "change_events": 3,
+    "changed_products": 1,
+    "counts_by_type": {
+      "PRICE_CHANGED": 1,
+      "PRODUCT_ADDED": 1,
+      "PRODUCT_REMOVED": 1
+    },
+    "from_product_count": 3,
+    "from_snapshot": "2026-07",
+    "removed": 1,
+    "to_product_count": 3,
+    "to_snapshot": "2026-08"
+  }
+}

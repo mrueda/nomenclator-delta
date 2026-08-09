@@ -1,0 +1,33 @@
+{
+  "added": 75,
+  "change_events": 341,
+  "changed_products": 187,
+  "counts_by_type": {
+    "ACTIVE_INGREDIENT_CHANGED": 2,
+    "HOMOGENEOUS_GROUP_CHANGED": 4,
+    "LABORATORY_CHANGED": 6,
+    "LISTING_DATE_CHANGED": 2,
+    "NAME_CHANGED": 7,
+    "PRICE_CHANGED": 131,
+    "PRODUCT_ADDED": 75,
+    "PRODUCT_REMOVED": 37,
+    "REMOVAL_DATE_CHANGED": 34,
+    "STATUS_CHANGED": 43
+  },
+  "errors": [],
+  "from_product_count": 20521,
+  "from_snapshot": "2026-07",
+  "normalized_records": {
+    "2026-07": 20521,
+    "2026-08": 20559
+  },
+  "removed": 37,
+  "source_records": {
+    "2026-07": 20521,
+    "2026-08": 20559
+  },
+  "to_product_count": 20559,
+  "to_snapshot": "2026-08",
+  "transition": "2026-07_to_2026-08",
+  "warnings": []
+}
