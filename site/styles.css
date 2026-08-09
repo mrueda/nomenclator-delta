@@ -57,11 +57,15 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .brand small { margin-top: 0.1rem; color: var(--muted); font-size: 0.75rem; }
 
 nav { display: flex; gap: 0.3rem; }
-.nav-button { border: 0; border-radius: 999px; padding: 0.55rem 0.9rem; color: var(--muted); background: transparent; cursor: pointer; }
+.nav-button { display: inline-flex; align-items: center; gap: 0.38rem; border: 0; border-radius: 999px; padding: 0.48rem 0.62rem 0.48rem 0.8rem; color: var(--muted); background: transparent; cursor: pointer; }
 .nav-button:hover { color: var(--ink); background: #eef2f5; }
 .nav-button.is-active { color: white; background: var(--primary); }
-.docs-link { padding: 0.48rem 0.72rem; border: 1px solid var(--line); border-radius: 999px; color: var(--primary-dark); background: var(--surface); font-size: 0.84rem; font-weight: 700; text-decoration: none; }
-.docs-link:hover { border-color: #9eb6ae; background: var(--primary-soft); }
+.nav-count { display: inline-flex; min-width: 1.45rem; min-height: 1.35rem; align-items: center; justify-content: center; padding: 0.1rem 0.38rem; border-radius: 999px; color: #526171; background: #e8edf1; font-size: 0.68rem; font-weight: 800; line-height: 1; }
+.nav-button.is-active .nav-count { color: white; background: rgba(255, 255, 255, 0.18); }
+.utility-links { display: flex; align-items: center; gap: 0.75rem; }
+.docs-link, .github-link { padding: 0.48rem 0.72rem; border: 1px solid var(--line); border-radius: 999px; color: var(--primary-dark); background: var(--surface); font-size: 0.84rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
+.docs-link:hover, .github-link:hover { border-color: #9eb6ae; background: var(--primary-soft); }
+.docs-label-short { display: none; }
 .source-link { color: var(--primary-dark); font-size: 0.86rem; font-weight: 700; text-decoration: none; }
 
 main { width: min(1280px, calc(100% - 2rem)); margin: 0 auto; }
@@ -98,14 +102,7 @@ main { width: min(1280px, calc(100% - 2rem)); margin: 0 auto; }
 .filter-row span { color: var(--muted); font-size: 0.75rem; font-weight: 700; }
 .filter-row select { padding: 0.62rem 2rem 0.62rem 0.7rem; border: 1px solid var(--line); border-radius: 6px; color: var(--ink); background: var(--surface-subtle); }
 
-.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin: 1.5rem 0 2.7rem; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: var(--line); }
-.stats article { padding: 1.05rem 1.25rem; background: var(--surface); }
-.stats span, .stats small { display: block; color: var(--muted); }
-.stats span { font-size: 0.73rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.07em; }
-.stats strong { display: block; margin: 0.2rem 0; font-family: Arial, Helvetica, sans-serif; font-size: 2.1rem; font-weight: 700; }
-.stats small { font-size: 0.72rem; }
-
-.content-grid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(330px, 0.75fr); gap: 2rem; align-items: start; }
+.content-grid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(330px, 0.75fr); gap: 2rem; align-items: start; margin-top: 1.6rem; }
 .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 1rem; margin-bottom: 1rem; }
 .section-heading h2 { margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: clamp(1.6rem, 3vw, 2.25rem); font-weight: 700; }
 #resultCount { margin: 0; color: var(--muted); font-size: 0.82rem; }
@@ -174,15 +171,19 @@ footer p { max-width: 620px; margin: 0; }
   .topbar nav { order: 3; width: 100%; }
   .source-link { display: none; }
   .hero { grid-template-columns: 1fr; gap: 1.5rem; }
-  .stats { grid-template-columns: 1fr 1fr; }
   .content-grid { grid-template-columns: 1fr; }
   .detail-panel { position: static; max-height: none; }
   .method-note { grid-template-columns: 1fr; gap: 1rem; }
 }
 
 @media (max-width: 580px) {
+  .topbar { column-gap: 0.5rem; }
   main { width: min(100% - 1rem, 1280px); }
   .brand small { display: none; }
+  .utility-links { gap: 0.4rem; }
+  .docs-link, .github-link { padding: 0.4rem 0.55rem; font-size: 0.78rem; }
+  .docs-label-full { display: none; }
+  .docs-label-short { display: inline; }
   .nav-button { padding-inline: 0.75rem; }
   .hero { padding-top: 3rem; }
   .hero h1 { font-size: clamp(1.9rem, 9vw, 2.45rem); }
@@ -190,8 +191,6 @@ footer p { max-width: 620px; margin: 0; }
   .search-row { gap: 0.3rem; padding-left: 0.65rem; }
   .search-row button { padding-inline: 0.65rem; }
   .filter-row label { min-width: 0; width: 100%; }
-  .stats { margin-bottom: 2rem; }
-  .stats article { padding: 0.9rem; }
   .result-card { grid-template-columns: 1fr; gap: 0.55rem; }
   .cn-badge { width: fit-content; }
   .change-chips { justify-content: flex-start; }

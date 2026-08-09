@@ -21,7 +21,7 @@
 
   async function init() {
     ["periodTabs", "datasetStatus", "searchInput", "clearSearch", "changeFilter",
-      "presenceFilter", "addedCount", "removedCount", "changedCount", "priceCount",
+      "changesNavCount", "addedNavCount", "removedNavCount",
       "viewEyebrow", "resultsTitle", "resultCount", "results", "detailPanel", "disclaimer"
     ].forEach(function (id) { els[id] = document.getElementById(id); });
     bindEvents();
@@ -50,7 +50,6 @@
     els.searchInput.addEventListener("input", render);
     els.clearSearch.addEventListener("click", resetApplication);
     els.changeFilter.addEventListener("change", render);
-    els.presenceFilter.addEventListener("change", render);
     els.periodTabs.addEventListener("click", function (event) {
       const button = event.target.closest("button[data-transition]");
       if (!button || button.disabled || button.dataset.transition === state.transition) return;
@@ -68,7 +67,6 @@
     const latestTransition = state.transitions[state.transitions.length - 1];
     els.searchInput.value = "";
     els.changeFilter.value = "";
-    els.presenceFilter.value = "";
     state.selectedCn = null;
     setView("changes");
     window.history.replaceState(null, "", window.location.pathname + window.location.search);
@@ -220,24 +218,22 @@
   }
 
   function renderHeader() {
-    els.datasetStatus.textContent = `${formatNumber(state.summary.to_product_count)} presentaciones en ${formatMonth(state.summary.to_snapshot)}`;
-    els.addedCount.textContent = formatNumber(state.summary.added);
-    els.removedCount.textContent = formatNumber(state.summary.removed);
-    els.changedCount.textContent = formatNumber(state.summary.changed_products);
-    els.priceCount.textContent = formatNumber((state.summary.counts_by_type || {}).PRICE_CHANGED || 0);
+    const visibleChanges = state.summary.added + state.summary.removed + state.summary.changed_products;
+    const priceChanges = (state.summary.counts_by_type || {}).PRICE_CHANGED || 0;
+    els.datasetStatus.textContent = `${formatNumber(state.summary.to_product_count)} presentaciones en ${formatMonth(state.summary.to_snapshot)} · ${formatNumber(state.summary.changed_products)} modificadas · ${formatNumber(priceChanges)} cambios de precio`;
+    els.changesNavCount.textContent = formatNumber(visibleChanges);
+    els.addedNavCount.textContent = formatNumber(state.summary.added);
+    els.removedNavCount.textContent = formatNumber(state.summary.removed);
     els.disclaimer.textContent = state.metadata.disclaimer_es;
   }
 
   function render() {
     const query = normalizeSearch(els.searchInput.value);
     const changeType = els.changeFilter.value;
-    const presence = els.presenceFilter.value;
     const filtered = state.products.filter(function (product) {
       const events = state.eventsByCn.get(product.cn) || [];
       if (!matchesView(events, Boolean(query))) return false;
       if (changeType && !events.some(function (event) { return event.change_type === changeType; })) return false;
-      if (presence === "present" && !product.present_in_latest) return false;
-      if (presence === "absent" && product.present_in_latest) return false;
       if (!query) return true;
       const haystack = normalizeSearch([
         product.cn, product.medicine_name, product.laboratory,

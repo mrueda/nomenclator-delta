@@ -2,7 +2,7 @@
   <a href="https://mrueda.github.io/nomenclator-delta/">
     <img src="docs-site/static/img/nomenclator-delta-wordmark.svg" width="560" alt="nomenclator-delta">
   </a>
-  <p><em>Presentation-level change history for Spain's Nomenclátor</em></p>
+  <p><em>Compare monthly changes in Spain's National Health System list of medicines and health products</em></p>
   <p>
     <a href="https://github.com/mrueda/nomenclator-delta/actions/workflows/build-and-test.yml"><img src="https://github.com/mrueda/nomenclator-delta/actions/workflows/build-and-test.yml/badge.svg" alt="Build and test"></a>
     <a href="https://github.com/mrueda/nomenclator-delta/actions/workflows/deploy.yml"><img src="https://github.com/mrueda/nomenclator-delta/actions/workflows/deploy.yml/badge.svg" alt="Documentation deployment"></a>
@@ -18,10 +18,12 @@
 
 ## About
 
-`nomenclator-delta` compares consecutive releases of Spain's *Nomenclátor de
-facturación*. It provides a static browser app for finding changes by Código
-Nacional, medicine name, active ingredient, or laboratory. There is no backend,
-account, tracking service, or patient data.
+`nomenclator-delta` compares consecutive monthly releases of the Ministerio de
+Sanidad's *Nomenclátor de Facturación*: its database of medicines and health
+products included in the Sistema Nacional de Salud (SNS) pharmaceutical benefit
+and dispensed through community pharmacies. The static browser app finds changes
+by Código Nacional, medicine name, active ingredient, or laboratory. There is no
+backend, account, tracking service, or patient data.
 
 The pharmacy-facing app is entirely in Spanish and uses official Ministerio de
 Sanidad terminology. Source code, data keys, tests, README, and documentation

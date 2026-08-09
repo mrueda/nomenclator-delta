@@ -66,9 +66,10 @@ export default function Home() {
               <p className={styles.kicker}>Compare monthly releases</p>
               <h1>See what changed in the Nomenclátor.</h1>
               <p className={styles.lede}>
-                Search changes by Código Nacional, medicine, active ingredient,
-                or laboratory. Each result shows the values in both monthly
-                source files.
+                The Nomenclátor is the Ministry's monthly database of medicines
+                and health products in the SNS pharmaceutical benefit that are
+                dispensed through community pharmacies. Search changes by
+                Código Nacional, medicine, active ingredient, or laboratory.
               </p>
               <div className={styles.actions}>
                 <Link className="button button--primary button--lg" to="pathname:///app/">

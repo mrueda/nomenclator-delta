@@ -2,6 +2,9 @@
   <title id="wordmark-title">nomenclator-delta</title>
   <desc id="wordmark-desc">nomenclator-delta, the monthly Nomenclátor comparison tool.</desc>
 
+  <!-- An opaque neutral field keeps the wordmark legible in light and dark README themes. -->
+  <rect width="1280" height="460" rx="48" fill="#f8faf7"/>
+
   <!-- Compact form of the publication-delta symbol. -->
   <g transform="translate(34 34) scale(.3828125)">
     <rect width="1024" height="1024" rx="196" fill="#f8faf7"/>
@@ -16,7 +19,7 @@
     <text
       x="0"
       y="212"
-      fill="#172523"
+      fill="#18202a"
       font-family="Arial, Helvetica, sans-serif"
       font-size="132"
       font-weight="760"

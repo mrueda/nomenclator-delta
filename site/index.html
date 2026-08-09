@@ -18,12 +18,15 @@
         </span>
       </a>
       <nav aria-label="Navegación principal">
-        <button class="nav-button is-active" data-view="changes" type="button" aria-pressed="true">Cambios</button>
-        <button class="nav-button" data-view="added" type="button" aria-pressed="false">Altas</button>
-        <button class="nav-button" data-view="removed" type="button" aria-pressed="false">Bajas</button>
+        <button class="nav-button is-active" data-view="changes" type="button" aria-pressed="true">Cambios <span class="nav-count" id="changesNavCount">—</span></button>
+        <button class="nav-button" data-view="added" type="button" aria-pressed="false">Altas <span class="nav-count" id="addedNavCount">—</span></button>
+        <button class="nav-button" data-view="removed" type="button" aria-pressed="false">Bajas <span class="nav-count" id="removedNavCount">—</span></button>
       </nav>
-      <a class="docs-link" href="https://mrueda.github.io/nomenclator-delta/docs/overview/" title="Abrir la documentación en inglés">Documentación</a>
-      <a class="source-link" href="https://www.sanidad.gob.es/profesionales/nomenclator.do" target="_blank" rel="noopener noreferrer">Fuente oficial ↗</a>
+      <div class="utility-links">
+        <a class="docs-link" href="https://mrueda.github.io/nomenclator-delta/docs/overview/" title="Abrir la documentación en inglés"><span class="docs-label-full">Documentación</span><span class="docs-label-short">Ayuda</span></a>
+        <a class="github-link" href="https://github.com/mrueda/nomenclator-delta" target="_blank" rel="noopener noreferrer" title="Abrir el repositorio de código en GitHub">GitHub ↗</a>
+        <a class="source-link" href="https://www.sanidad.gob.es/profesionales/nomenclator.do" target="_blank" rel="noopener noreferrer">Fuente oficial ↗</a>
+      </div>
     </header>
 
     <main>
@@ -31,7 +34,7 @@
         <div class="hero-copy">
           <p class="eyebrow">Comparador mensual · datos oficiales</p>
           <h1>Encuentra qué cambió para una presentación.</h1>
-          <p>Busca por Código Nacional, nombre, principio activo o laboratorio. Los resultados comparan dos publicaciones mensuales del Nomenclátor de facturación.</p>
+          <p>El Nomenclátor de facturación del Ministerio de Sanidad reúne los medicamentos y productos sanitarios incluidos en la prestación farmacéutica del SNS.</p>
         </div>
         <div class="period-card" aria-live="polite">
           <span id="periodLabel">Periodo comparado</span>
@@ -56,22 +59,7 @@
               <option value="">Todos los cambios</option>
             </select>
           </label>
-          <label>
-            <span>Situación en el índice más reciente</span>
-            <select id="presenceFilter">
-              <option value="">Todas</option>
-              <option value="present">Presentes en el índice más reciente</option>
-              <option value="absent">Ausentes en el índice más reciente</option>
-            </select>
-          </label>
         </div>
-      </section>
-
-      <section class="stats" aria-label="Resumen de cambios">
-        <article><span>Altas</span><strong id="addedCount">—</strong><small>presentaciones nuevas</small></article>
-        <article><span>Bajas</span><strong id="removedCount">—</strong><small>presentaciones ausentes</small></article>
-        <article><span>Modificadas</span><strong id="changedCount">—</strong><small>presentaciones existentes</small></article>
-        <article><span>Cambios de precio</span><strong id="priceCount">—</strong><small>campos de precio</small></article>
       </section>
 
       <section class="content-grid">

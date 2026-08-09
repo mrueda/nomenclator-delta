@@ -8,9 +8,14 @@ import Link from '@docusaurus/Link';
 
 # What nomenclator-delta does
 
-**nomenclator-delta** compares consecutive monthly releases of Spain's
-*Nomenclátor de facturación*. It helps answer one question: **what changed for
-this Código Nacional from one published month to the next?**
+The *Nomenclátor de Facturación* is the Ministerio de Sanidad's database of
+medicines and health products included in the *prestación farmacéutica*
+(pharmaceutical benefit) of the Sistema Nacional de Salud (SNS) and dispensed
+through community pharmacies (*oficinas de farmacia*). The Ministry publishes a
+new file each month.
+
+**nomenclator-delta** compares consecutive releases to answer one question:
+**what changed for this Código Nacional from one published month to the next?**
 
 <div className="button-row">
   <Link className="button button--primary" to="pathname:///app/">Open the Spanish app</Link>

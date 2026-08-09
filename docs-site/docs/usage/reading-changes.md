@@ -17,11 +17,12 @@ the reason for that difference.
 | **Alta en la comparación** | The Código Nacional is absent from the earlier export and present in the later export. |
 | **Baja en la comparación** | The Código Nacional is present in the earlier export and absent from the later export. |
 | **Cambio de estado** | The official `Estado` value changed while the Código Nacional remained present in both exports. |
-| **Presentes/Ausentes en el índice más reciente** | Whether the Código Nacional occurs in the latest index. |
 
 In this app, *alta* and *baja* describe whether a Código Nacional occurs in each
-file. They do not state the reason for a change and should not be read as a
-product recall, legal interpretation, or dispensing guidance.
+file in the selected comparison. **Cambio de estado** instead describes a
+change to the official `Estado` field while the record remains in both files.
+None of these terms states the reason for a change or provides a product recall,
+legal interpretation, or dispensing guidance.
 
 ## Before and after
 

@@ -13,8 +13,7 @@ period. It does not show every current product. Check that:
 
 1. the Código Nacional has six digits;
 2. the search has no extra restrictive terms;
-3. **Tipo de cambio** and **Situación en el índice más reciente** are set as
-   intended;
+3. **Tipo de cambio** is set as intended;
 4. the selected **Cambios**, **Altas**, or **Bajas** view matches the question.
 
 If the presentation exists but did not change between the two monthly files,

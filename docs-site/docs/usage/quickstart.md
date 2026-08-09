@@ -49,8 +49,7 @@ The top navigation changes the result set:
   absent from the later file.
 
 Use **Tipo de cambio** to select one kind of change, such as *Cambio de precio*
-or *Cambio de estado*. Use **Situación en el índice más reciente** to distinguish
-records that are present from records that are absent in the latest index.
+or *Cambio de estado*.
 
 ## Inspect the timeline
 
