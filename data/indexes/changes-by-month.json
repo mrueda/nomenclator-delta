@@ -39,5 +39,27 @@
     "removed": 37,
     "to_product_count": 20559,
     "to_snapshot": "2026-08"
+  },
+  {
+    "added": 39,
+    "change_events": 479,
+    "changed_products": 237,
+    "counts_by_type": {
+      "GENERIC_NAME_CHANGED": 2,
+      "HOMOGENEOUS_GROUP_CHANGED": 6,
+      "LABORATORY_CHANGED": 3,
+      "LISTING_DATE_CHANGED": 8,
+      "NAME_CHANGED": 73,
+      "PRICE_CHANGED": 22,
+      "PRODUCT_ADDED": 39,
+      "PRODUCT_REMOVED": 51,
+      "REMOVAL_DATE_CHANGED": 136,
+      "STATUS_CHANGED": 139
+    },
+    "from_product_count": 20559,
+    "from_snapshot": "2026-08",
+    "removed": 51,
+    "to_product_count": 20547,
+    "to_snapshot": "2026-09"
   }
 ]

@@ -1,0 +1,105 @@
+{
+  "cn": "724640",
+  "current": {
+    "active_ingredients": [
+      "DIDROGESTERONA",
+      "ESTRADIOL HEMIHIDRATO"
+    ],
+    "contribution": "ESPECIAL",
+    "laboratory": {
+      "code": "7479",
+      "name": "THERAMEX IRELAND LIMITED"
+    },
+    "medicine_name": "FEMFASCON 2 MG/10 MG COMPRIMIDOS RECUBIERTOS CON PELICULA 28 comprimidos",
+    "prices": {
+      "homogeneous_group_minimum": null,
+      "reference": null,
+      "retail_with_vat": "8.59"
+    },
+    "status": "ALTA"
+  },
+  "events": [
+    {
+      "after": {
+        "active_ingredients": [
+          "DIDROGESTERONA",
+          "ESTRADIOL HEMIHIDRATO"
+        ],
+        "contribution": "ESPECIAL",
+        "laboratory": {
+          "code": "7479",
+          "name": "THERAMEX IRELAND LIMITED"
+        },
+        "medicine_name": "FEMFASCON 2 MG/10 MG COMPRIMIDOS RECUBIERTOS CON PELICULA 28 comprimidos",
+        "prices": {
+          "homogeneous_group_minimum": null,
+          "reference": null,
+          "retail_with_vat": "8.59"
+        },
+        "status": "ALTA"
+      },
+      "before": null,
+      "change_label_es": "Alta en la comparación",
+      "change_type": "PRODUCT_ADDED",
+      "cn": "724640",
+      "field": null,
+      "field_label_es": "Presentación",
+      "from_snapshot": "2026-08",
+      "id": "2026-08_to_2026-09:724640:PRODUCT_ADDED:0",
+      "source": {
+        "authority": "Ministerio de Sanidad",
+        "from_snapshot": "2026-08",
+        "official_source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do",
+        "to_snapshot": "2026-09"
+      },
+      "to_snapshot": "2026-09"
+    }
+  ],
+  "snapshots": [
+    {
+      "snapshot": "2026-09",
+      "state": {
+        "active_ingredients": [
+          "DIDROGESTERONA",
+          "ESTRADIOL HEMIHIDRATO"
+        ],
+        "contribution": "ESPECIAL",
+        "laboratory": {
+          "code": "7479",
+          "name": "THERAMEX IRELAND LIMITED"
+        },
+        "medicine_name": "FEMFASCON 2 MG/10 MG COMPRIMIDOS RECUBIERTOS CON PELICULA 28 comprimidos",
+        "prices": {
+          "homogeneous_group_minimum": null,
+          "reference": null,
+          "retail_with_vat": "8.59"
+        },
+        "status": "ALTA"
+      }
+    }
+  ],
+  "sources": {
+    "2026-08": {
+      "authority": "Ministerio de Sanidad",
+      "file_size": 4504324,
+      "mime_type": "text/csv; charset=UTF-8",
+      "original_filename": "20260809_Nomenclator_de_Facturacion.csv",
+      "parser_version": "1",
+      "retrieved_at": "2026-08-09T12:49:33Z",
+      "sha256": "2af18bec6e7005e0bb6c34fede8e6ec13f717b71998fef1cc87ffce65d05df84",
+      "snapshot": "2026-08",
+      "source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do?metodo=buscarProductos&especialidad=%25%25%25&d-4015021-e=1&6578706f7274=1%20%C2%A0"
+    },
+    "2026-09": {
+      "authority": "Ministerio de Sanidad",
+      "file_size": 4505330,
+      "mime_type": "text/csv",
+      "original_filename": "20260909_Nomenclator_de_Facturacion.csv",
+      "parser_version": "1",
+      "retrieved_at": "2026-09-09T10:59:15+00:00",
+      "sha256": "736cf943a48681032c86e342c0afad10a4435e59186a79c7175654385f7ae451",
+      "snapshot": "2026-09",
+      "source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do?metodo=buscarProductos&especialidad=%25%25%25&d-4015021-e=1&6578706f7274=1%20%C2%A0"
+    }
+  }
+}

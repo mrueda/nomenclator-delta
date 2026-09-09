@@ -1,0 +1,124 @@
+{
+  "cn": "706237",
+  "current": {
+    "active_ingredients": [
+      "ARIPIPRAZOL"
+    ],
+    "contribution": "ESPECIAL",
+    "laboratory": {
+      "code": "741",
+      "name": "TARBIS FARMA, S.L."
+    },
+    "medicine_name": "ARIPIPRAZOL TARBIS 10 MG COMPRIMIDOS EFG , 28 comprimidos",
+    "prices": {
+      "homogeneous_group_minimum": "47.18",
+      "reference": "47.18",
+      "retail_with_vat": "47.18"
+    },
+    "status": "BAJA POR NO COMERCIALIZAR"
+  },
+  "events": [
+    {
+      "after": "2026-09-01",
+      "before": null,
+      "change_label_es": "Cambio de fecha de baja",
+      "change_type": "REMOVAL_DATE_CHANGED",
+      "cn": "706237",
+      "field": "listed_until",
+      "field_label_es": "Fecha de baja en el nomenclátor",
+      "from_snapshot": "2026-08",
+      "id": "2026-08_to_2026-09:706237:REMOVAL_DATE_CHANGED:1",
+      "source": {
+        "authority": "Ministerio de Sanidad",
+        "from_snapshot": "2026-08",
+        "official_source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do",
+        "to_snapshot": "2026-09"
+      },
+      "to_snapshot": "2026-09"
+    },
+    {
+      "after": "BAJA POR NO COMERCIALIZAR",
+      "before": "ALTA",
+      "change_label_es": "Cambio de estado",
+      "change_type": "STATUS_CHANGED",
+      "cn": "706237",
+      "field": "status",
+      "field_label_es": "Estado",
+      "from_snapshot": "2026-08",
+      "id": "2026-08_to_2026-09:706237:STATUS_CHANGED:0",
+      "source": {
+        "authority": "Ministerio de Sanidad",
+        "from_snapshot": "2026-08",
+        "official_source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do",
+        "to_snapshot": "2026-09"
+      },
+      "to_snapshot": "2026-09"
+    }
+  ],
+  "snapshots": [
+    {
+      "snapshot": "2026-08",
+      "state": {
+        "active_ingredients": [
+          "ARIPIPRAZOL"
+        ],
+        "contribution": "ESPECIAL",
+        "laboratory": {
+          "code": "741",
+          "name": "TARBIS FARMA, S.L."
+        },
+        "medicine_name": "ARIPIPRAZOL TARBIS 10 MG COMPRIMIDOS EFG , 28 comprimidos",
+        "prices": {
+          "homogeneous_group_minimum": "47.18",
+          "reference": "47.18",
+          "retail_with_vat": "47.18"
+        },
+        "status": "ALTA"
+      }
+    },
+    {
+      "snapshot": "2026-09",
+      "state": {
+        "active_ingredients": [
+          "ARIPIPRAZOL"
+        ],
+        "contribution": "ESPECIAL",
+        "laboratory": {
+          "code": "741",
+          "name": "TARBIS FARMA, S.L."
+        },
+        "medicine_name": "ARIPIPRAZOL TARBIS 10 MG COMPRIMIDOS EFG , 28 comprimidos",
+        "prices": {
+          "homogeneous_group_minimum": "47.18",
+          "reference": "47.18",
+          "retail_with_vat": "47.18"
+        },
+        "status": "BAJA POR NO COMERCIALIZAR"
+      }
+    }
+  ],
+  "sources": {
+    "2026-08": {
+      "authority": "Ministerio de Sanidad",
+      "file_size": 4504324,
+      "mime_type": "text/csv; charset=UTF-8",
+      "original_filename": "20260809_Nomenclator_de_Facturacion.csv",
+      "parser_version": "1",
+      "retrieved_at": "2026-08-09T12:49:33Z",
+      "sha256": "2af18bec6e7005e0bb6c34fede8e6ec13f717b71998fef1cc87ffce65d05df84",
+      "snapshot": "2026-08",
+      "source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do?metodo=buscarProductos&especialidad=%25%25%25&d-4015021-e=1&6578706f7274=1%20%C2%A0"
+    },
+    "2026-09": {
+      "authority": "Ministerio de Sanidad",
+      "file_size": 4505330,
+      "mime_type": "text/csv",
+      "original_filename": "20260909_Nomenclator_de_Facturacion.csv",
+      "parser_version": "1",
+      "retrieved_at": "2026-09-09T10:59:15+00:00",
+      "sha256": "736cf943a48681032c86e342c0afad10a4435e59186a79c7175654385f7ae451",
+      "snapshot": "2026-09",
+      "source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do?metodo=buscarProductos&especialidad=%25%25%25&d-4015021-e=1&6578706f7274=1%20%C2%A0"
+    }
+  }
+}

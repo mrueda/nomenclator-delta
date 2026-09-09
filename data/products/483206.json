@@ -1,0 +1,100 @@
+{
+  "cn": "483206",
+  "current": {
+    "active_ingredients": [],
+    "contribution": "NORMAL",
+    "laboratory": {
+      "code": "8004",
+      "name": "BARNA IMPORT MEDICA, S.A."
+    },
+    "medicine_name": "ABSOR ELASTICOS T. GRANDE 80 U",
+    "prices": {
+      "homogeneous_group_minimum": null,
+      "reference": null,
+      "retail_with_vat": "47.45"
+    },
+    "status": "ALTA"
+  },
+  "events": [
+    {
+      "after": "ABSOR ELASTICOS T. GRANDE 80 U",
+      "before": "ABSOR T. GRANDE 80U",
+      "change_label_es": "Cambio de nombre",
+      "change_type": "NAME_CHANGED",
+      "cn": "483206",
+      "field": "medicine_name",
+      "field_label_es": "Nombre del producto farmacéutico",
+      "from_snapshot": "2026-08",
+      "id": "2026-08_to_2026-09:483206:NAME_CHANGED:0",
+      "source": {
+        "authority": "Ministerio de Sanidad",
+        "from_snapshot": "2026-08",
+        "official_source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do",
+        "to_snapshot": "2026-09"
+      },
+      "to_snapshot": "2026-09"
+    }
+  ],
+  "snapshots": [
+    {
+      "snapshot": "2026-08",
+      "state": {
+        "active_ingredients": [],
+        "contribution": "NORMAL",
+        "laboratory": {
+          "code": "8004",
+          "name": "BARNA IMPORT MEDICA, S.A."
+        },
+        "medicine_name": "ABSOR T. GRANDE 80U",
+        "prices": {
+          "homogeneous_group_minimum": null,
+          "reference": null,
+          "retail_with_vat": "47.45"
+        },
+        "status": "ALTA"
+      }
+    },
+    {
+      "snapshot": "2026-09",
+      "state": {
+        "active_ingredients": [],
+        "contribution": "NORMAL",
+        "laboratory": {
+          "code": "8004",
+          "name": "BARNA IMPORT MEDICA, S.A."
+        },
+        "medicine_name": "ABSOR ELASTICOS T. GRANDE 80 U",
+        "prices": {
+          "homogeneous_group_minimum": null,
+          "reference": null,
+          "retail_with_vat": "47.45"
+        },
+        "status": "ALTA"
+      }
+    }
+  ],
+  "sources": {
+    "2026-08": {
+      "authority": "Ministerio de Sanidad",
+      "file_size": 4504324,
+      "mime_type": "text/csv; charset=UTF-8",
+      "original_filename": "20260809_Nomenclator_de_Facturacion.csv",
+      "parser_version": "1",
+      "retrieved_at": "2026-08-09T12:49:33Z",
+      "sha256": "2af18bec6e7005e0bb6c34fede8e6ec13f717b71998fef1cc87ffce65d05df84",
+      "snapshot": "2026-08",
+      "source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do?metodo=buscarProductos&especialidad=%25%25%25&d-4015021-e=1&6578706f7274=1%20%C2%A0"
+    },
+    "2026-09": {
+      "authority": "Ministerio de Sanidad",
+      "file_size": 4505330,
+      "mime_type": "text/csv",
+      "original_filename": "20260909_Nomenclator_de_Facturacion.csv",
+      "parser_version": "1",
+      "retrieved_at": "2026-09-09T10:59:15+00:00",
+      "sha256": "736cf943a48681032c86e342c0afad10a4435e59186a79c7175654385f7ae451",
+      "snapshot": "2026-09",
+      "source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do?metodo=buscarProductos&especialidad=%25%25%25&d-4015021-e=1&6578706f7274=1%20%C2%A0"
+    }
+  }
+}

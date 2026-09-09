@@ -1,0 +1,148 @@
+{
+  "cn": "705809",
+  "current": {
+    "active_ingredients": [
+      "CARBIDOPA",
+      "ENTACAPONA",
+      "LEVODOPA"
+    ],
+    "contribution": "ESPECIAL",
+    "laboratory": {
+      "code": "863",
+      "name": "KERN PHARMA, S.L."
+    },
+    "medicine_name": "LEVODOPA/CARBIDOPA/ENTACAPONA KERN PHARMA 200 mg /50 mg /200 mg COMPRIMIDOS RECUBIERTOS CON PELICULA EFG , 100 comprimidos",
+    "prices": {
+      "homogeneous_group_minimum": "80.72",
+      "reference": null,
+      "retail_with_vat": "80.72"
+    },
+    "status": "ALTA"
+  },
+  "events": [
+    {
+      "after": "2026-09-01",
+      "before": "2017-07-01",
+      "change_label_es": "Cambio de fecha de alta",
+      "change_type": "LISTING_DATE_CHANGED",
+      "cn": "705809",
+      "field": "listed_from",
+      "field_label_es": "Fecha de alta en el nomenclátor",
+      "from_snapshot": "2026-08",
+      "id": "2026-08_to_2026-09:705809:LISTING_DATE_CHANGED:1",
+      "source": {
+        "authority": "Ministerio de Sanidad",
+        "from_snapshot": "2026-08",
+        "official_source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do",
+        "to_snapshot": "2026-09"
+      },
+      "to_snapshot": "2026-09"
+    },
+    {
+      "after": null,
+      "before": "2026-04-01",
+      "change_label_es": "Cambio de fecha de baja",
+      "change_type": "REMOVAL_DATE_CHANGED",
+      "cn": "705809",
+      "field": "listed_until",
+      "field_label_es": "Fecha de baja en el nomenclátor",
+      "from_snapshot": "2026-08",
+      "id": "2026-08_to_2026-09:705809:REMOVAL_DATE_CHANGED:2",
+      "source": {
+        "authority": "Ministerio de Sanidad",
+        "from_snapshot": "2026-08",
+        "official_source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do",
+        "to_snapshot": "2026-09"
+      },
+      "to_snapshot": "2026-09"
+    },
+    {
+      "after": "ALTA",
+      "before": "BAJA POR NO COMERCIALIZAR",
+      "change_label_es": "Cambio de estado",
+      "change_type": "STATUS_CHANGED",
+      "cn": "705809",
+      "field": "status",
+      "field_label_es": "Estado",
+      "from_snapshot": "2026-08",
+      "id": "2026-08_to_2026-09:705809:STATUS_CHANGED:0",
+      "source": {
+        "authority": "Ministerio de Sanidad",
+        "from_snapshot": "2026-08",
+        "official_source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do",
+        "to_snapshot": "2026-09"
+      },
+      "to_snapshot": "2026-09"
+    }
+  ],
+  "snapshots": [
+    {
+      "snapshot": "2026-08",
+      "state": {
+        "active_ingredients": [
+          "CARBIDOPA",
+          "ENTACAPONA",
+          "LEVODOPA"
+        ],
+        "contribution": "ESPECIAL",
+        "laboratory": {
+          "code": "863",
+          "name": "KERN PHARMA, S.L."
+        },
+        "medicine_name": "LEVODOPA/CARBIDOPA/ENTACAPONA KERN PHARMA 200 mg /50 mg /200 mg COMPRIMIDOS RECUBIERTOS CON PELICULA EFG , 100 comprimidos",
+        "prices": {
+          "homogeneous_group_minimum": "80.72",
+          "reference": null,
+          "retail_with_vat": "80.72"
+        },
+        "status": "BAJA POR NO COMERCIALIZAR"
+      }
+    },
+    {
+      "snapshot": "2026-09",
+      "state": {
+        "active_ingredients": [
+          "CARBIDOPA",
+          "ENTACAPONA",
+          "LEVODOPA"
+        ],
+        "contribution": "ESPECIAL",
+        "laboratory": {
+          "code": "863",
+          "name": "KERN PHARMA, S.L."
+        },
+        "medicine_name": "LEVODOPA/CARBIDOPA/ENTACAPONA KERN PHARMA 200 mg /50 mg /200 mg COMPRIMIDOS RECUBIERTOS CON PELICULA EFG , 100 comprimidos",
+        "prices": {
+          "homogeneous_group_minimum": "80.72",
+          "reference": null,
+          "retail_with_vat": "80.72"
+        },
+        "status": "ALTA"
+      }
+    }
+  ],
+  "sources": {
+    "2026-08": {
+      "authority": "Ministerio de Sanidad",
+      "file_size": 4504324,
+      "mime_type": "text/csv; charset=UTF-8",
+      "original_filename": "20260809_Nomenclator_de_Facturacion.csv",
+      "parser_version": "1",
+      "retrieved_at": "2026-08-09T12:49:33Z",
+      "sha256": "2af18bec6e7005e0bb6c34fede8e6ec13f717b71998fef1cc87ffce65d05df84",
+      "snapshot": "2026-08",
+      "source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do?metodo=buscarProductos&especialidad=%25%25%25&d-4015021-e=1&6578706f7274=1%20%C2%A0"
+    },
+    "2026-09": {
+      "authority": "Ministerio de Sanidad",
+      "file_size": 4505330,
+      "mime_type": "text/csv",
+      "original_filename": "20260909_Nomenclator_de_Facturacion.csv",
+      "parser_version": "1",
+      "retrieved_at": "2026-09-09T10:59:15+00:00",
+      "sha256": "736cf943a48681032c86e342c0afad10a4435e59186a79c7175654385f7ae451",
+      "snapshot": "2026-09",
+      "source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do?metodo=buscarProductos&especialidad=%25%25%25&d-4015021-e=1&6578706f7274=1%20%C2%A0"
+    }
+  }
+}
