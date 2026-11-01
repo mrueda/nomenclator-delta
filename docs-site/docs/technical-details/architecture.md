@@ -26,7 +26,7 @@ comparison locally, including recovery of missing historical releases.
 | `collect.py` | Download the current official response and store it by checksum, together with its source details. |
 | `update.py` | Check the official publication month, archive new source bytes, and append only consecutive releases. |
 | `parse.py` / `normalize.py` | Enforce the known source contract and produce stable CN-level records. |
-| `diff.py` | Compare consecutive months and create one event for each meaningful change. |
+| `diff.py` | Compare available snapshots and create one event for each meaningful change. |
 | `build.py` | Write snapshots, transitions, indexes, histories, metadata, and a build report. |
 | `validate.py` | Check referential integrity, counts, chronology, identifiers, and event invariants. |
 | `site/` | Load static JSON and provide the Spanish search interface. |
@@ -67,8 +67,10 @@ stay in the browser and are not tied to an account or patient.
 
 ## Identity and chronology
 
-Products are matched only by Código Nacional. Comparisons must join consecutive
-months, must not conflict with existing snapshot data, and are ordered by
+Products are matched only by Código Nacional. Comparisons normally join consecutive
+months. The sole exception is September → November 2026, requiring manual
+`--allow-gap` approval and a visible coverage warning in the app. All other
+gaps are rejected. Comparisons must not conflict with existing snapshot data and are ordered by
 `YYYY-MM`. The pipeline does not guess that different identifiers describe the
 same product, even when their names are similar.
 

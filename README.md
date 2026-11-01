@@ -18,7 +18,7 @@
 
 ## About
 
-`nomenclator-delta` compares consecutive monthly releases of the Ministerio de
+`nomenclator-delta` compares available monthly releases of the Ministerio de
 Sanidad's *Nomenclátor de Facturación*: its database of medicines and health
 products included in the Sistema Nacional de Salud (SNS) pharmaceutical benefit
 and dispensed through community pharmacies. The static browser app finds changes

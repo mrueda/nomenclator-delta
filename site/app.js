@@ -218,6 +218,16 @@
   }
 
   function renderHeader() {
+    const missing = [];
+    const [year, month] = state.summary.from_snapshot.split("-").map(Number);
+    const cursor = new Date(Date.UTC(year, month, 1));
+    while (cursor.toISOString().slice(0, 7) < state.summary.to_snapshot) {
+      missing.push(formatMonth(cursor.toISOString().slice(0, 7)));
+      cursor.setUTCMonth(cursor.getUTCMonth() + 1);
+    }
+    const warning = document.getElementById("coverageWarning");
+    warning.hidden = missing.length === 0;
+    warning.textContent = missing.length ? `Sin datos de ${missing.join(", ")}. Se comparan ${formatMonth(state.summary.from_snapshot)} y ${formatMonth(state.summary.to_snapshot)}: diferencias acumuladas, no cambios de un solo mes. No se puede determinar en qué mes se produjo cada cambio ni detectar cambios intermedios que se hayan revertido.` : "";
     const visibleChanges = state.summary.added + state.summary.removed + state.summary.changed_products;
     const priceChanges = (state.summary.counts_by_type || {}).PRICE_CHANGED || 0;
     els.datasetStatus.textContent = `${formatNumber(state.summary.to_product_count)} presentaciones en ${formatMonth(state.summary.to_snapshot)} · ${formatNumber(state.summary.changed_products)} modificadas · ${formatNumber(priceChanges)} cambios de precio`;
@@ -413,7 +423,7 @@
     const after = simplePresence && event.change_type === "PRODUCT_REMOVED" ? "No figura" : formatEventValue(event, event.after);
     return [
       '<article class="event">',
-      `<header><strong>${escapeHtml(event.change_label_es)}</strong><time>${escapeHtml(formatMonth(event.to_snapshot))}</time></header>`,
+      `<header><strong>${escapeHtml(event.change_label_es)}</strong><span>${escapeHtml(formatMonth(event.from_snapshot))} → ${escapeHtml(formatMonth(event.to_snapshot))}</span></header>`,
       `<p class="event-field">${escapeHtml(event.field_label_es)}</p>`,
       '<div class="value-change">',
       `<span class="value">${escapeHtml(before)}</span><span class="arrow">→</span>`,

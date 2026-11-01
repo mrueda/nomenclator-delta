@@ -11,7 +11,7 @@
     },
     "medicine_name": "VISCOFRESH 10 mg/ml COLIRIO EN SOLUCION EN ENVASE UNIDOSIS, 30 envases unidosis 0,4 ml",
     "prices": {
-      "homogeneous_group_minimum": null,
+      "homogeneous_group_minimum": "5.48",
       "reference": "5.48",
       "retail_with_vat": "8.87"
     },
@@ -51,6 +51,24 @@
         "to_snapshot": "2026-09"
       },
       "to_snapshot": "2026-09"
+    },
+    {
+      "after": "5.48",
+      "before": null,
+      "change_label_es": "Cambio de precio",
+      "change_type": "PRICE_CHANGED",
+      "cn": "770300",
+      "field": "prices.homogeneous_group_minimum",
+      "field_label_es": "Menor precio de la agrupación homogénea",
+      "from_snapshot": "2026-09",
+      "id": "2026-09_to_2026-11:770300:PRICE_CHANGED:0",
+      "source": {
+        "authority": "Ministerio de Sanidad",
+        "from_snapshot": "2026-09",
+        "official_source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do",
+        "to_snapshot": "2026-11"
+      },
+      "to_snapshot": "2026-11"
     }
   ],
   "snapshots": [
@@ -68,6 +86,26 @@
         "medicine_name": "VISCOFRESH 10 mg/ml COLIRIO EN SOLUCION EN ENVASE UNIDOSIS, 30 envases unidosis 0,4 ml",
         "prices": {
           "homogeneous_group_minimum": null,
+          "reference": "5.48",
+          "retail_with_vat": "8.87"
+        },
+        "status": "ALTA"
+      }
+    },
+    {
+      "snapshot": "2026-11",
+      "state": {
+        "active_ingredients": [
+          "CARMELOSA SODICA"
+        ],
+        "contribution": "NORMAL",
+        "laboratory": {
+          "code": "1236",
+          "name": "DIFARMED, S.L.U"
+        },
+        "medicine_name": "VISCOFRESH 10 mg/ml COLIRIO EN SOLUCION EN ENVASE UNIDOSIS, 30 envases unidosis 0,4 ml",
+        "prices": {
+          "homogeneous_group_minimum": "5.48",
           "reference": "5.48",
           "retail_with_vat": "8.87"
         },
@@ -96,6 +134,17 @@
       "retrieved_at": "2026-09-09T10:59:15+00:00",
       "sha256": "736cf943a48681032c86e342c0afad10a4435e59186a79c7175654385f7ae451",
       "snapshot": "2026-09",
+      "source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do?metodo=buscarProductos&especialidad=%25%25%25&d-4015021-e=1&6578706f7274=1%20%C2%A0"
+    },
+    "2026-11": {
+      "authority": "Ministerio de Sanidad",
+      "file_size": 4531357,
+      "mime_type": "text/csv",
+      "original_filename": "20261101_Nomenclator_de_Facturacion.csv",
+      "parser_version": "1",
+      "retrieved_at": "2026-11-01T12:17:18+00:00",
+      "sha256": "433dc6ecdfeb5367c505b60325143397f174568306964e392dfa34600a069fdb",
+      "snapshot": "2026-11",
       "source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do?metodo=buscarProductos&especialidad=%25%25%25&d-4015021-e=1&6578706f7274=1%20%C2%A0"
     }
   }

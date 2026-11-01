@@ -15,7 +15,7 @@
       "reference": null,
       "retail_with_vat": "202.71"
     },
-    "status": "BAJA POR NO COMERCIALIZAR"
+    "status": "ALTA"
   },
   "events": [
     {
@@ -71,6 +71,60 @@
         "to_snapshot": "2026-08"
       },
       "to_snapshot": "2026-08"
+    },
+    {
+      "after": "2026-10-01",
+      "before": "2024-02-01",
+      "change_label_es": "Cambio de fecha de alta",
+      "change_type": "LISTING_DATE_CHANGED",
+      "cn": "758155",
+      "field": "listed_from",
+      "field_label_es": "Fecha de alta en el nomenclátor",
+      "from_snapshot": "2026-09",
+      "id": "2026-09_to_2026-11:758155:LISTING_DATE_CHANGED:1",
+      "source": {
+        "authority": "Ministerio de Sanidad",
+        "from_snapshot": "2026-09",
+        "official_source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do",
+        "to_snapshot": "2026-11"
+      },
+      "to_snapshot": "2026-11"
+    },
+    {
+      "after": null,
+      "before": "2026-08-01",
+      "change_label_es": "Cambio de fecha de baja",
+      "change_type": "REMOVAL_DATE_CHANGED",
+      "cn": "758155",
+      "field": "listed_until",
+      "field_label_es": "Fecha de baja en el nomenclátor",
+      "from_snapshot": "2026-09",
+      "id": "2026-09_to_2026-11:758155:REMOVAL_DATE_CHANGED:2",
+      "source": {
+        "authority": "Ministerio de Sanidad",
+        "from_snapshot": "2026-09",
+        "official_source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do",
+        "to_snapshot": "2026-11"
+      },
+      "to_snapshot": "2026-11"
+    },
+    {
+      "after": "ALTA",
+      "before": "BAJA POR NO COMERCIALIZAR",
+      "change_label_es": "Cambio de estado",
+      "change_type": "STATUS_CHANGED",
+      "cn": "758155",
+      "field": "status",
+      "field_label_es": "Estado",
+      "from_snapshot": "2026-09",
+      "id": "2026-09_to_2026-11:758155:STATUS_CHANGED:0",
+      "source": {
+        "authority": "Ministerio de Sanidad",
+        "from_snapshot": "2026-09",
+        "official_source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do",
+        "to_snapshot": "2026-11"
+      },
+      "to_snapshot": "2026-11"
     }
   ],
   "snapshots": [
@@ -133,6 +187,46 @@
         },
         "status": "BAJA POR NO COMERCIALIZAR"
       }
+    },
+    {
+      "snapshot": "2026-09",
+      "state": {
+        "active_ingredients": [
+          "RELUGOLIX"
+        ],
+        "contribution": "ESPECIAL",
+        "laboratory": {
+          "code": "1169",
+          "name": "ACCORD HEALTHCARE, S.L.U"
+        },
+        "medicine_name": "ORGOVYX 120 MG COMPRIMIDOS RECUBIERTOS CON PELICULA. 30 comprimidos frasco (HDPE)",
+        "prices": {
+          "homogeneous_group_minimum": "123.79",
+          "reference": null,
+          "retail_with_vat": "202.71"
+        },
+        "status": "BAJA POR NO COMERCIALIZAR"
+      }
+    },
+    {
+      "snapshot": "2026-11",
+      "state": {
+        "active_ingredients": [
+          "RELUGOLIX"
+        ],
+        "contribution": "ESPECIAL",
+        "laboratory": {
+          "code": "1169",
+          "name": "ACCORD HEALTHCARE, S.L.U"
+        },
+        "medicine_name": "ORGOVYX 120 MG COMPRIMIDOS RECUBIERTOS CON PELICULA. 30 comprimidos frasco (HDPE)",
+        "prices": {
+          "homogeneous_group_minimum": "123.79",
+          "reference": null,
+          "retail_with_vat": "202.71"
+        },
+        "status": "ALTA"
+      }
     }
   ],
   "sources": {
@@ -182,6 +276,28 @@
       "retrieved_at": "2026-08-09T12:49:33Z",
       "sha256": "2af18bec6e7005e0bb6c34fede8e6ec13f717b71998fef1cc87ffce65d05df84",
       "snapshot": "2026-08",
+      "source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do?metodo=buscarProductos&especialidad=%25%25%25&d-4015021-e=1&6578706f7274=1%20%C2%A0"
+    },
+    "2026-09": {
+      "authority": "Ministerio de Sanidad",
+      "file_size": 4505330,
+      "mime_type": "text/csv",
+      "original_filename": "20260909_Nomenclator_de_Facturacion.csv",
+      "parser_version": "1",
+      "retrieved_at": "2026-09-09T10:59:15+00:00",
+      "sha256": "736cf943a48681032c86e342c0afad10a4435e59186a79c7175654385f7ae451",
+      "snapshot": "2026-09",
+      "source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do?metodo=buscarProductos&especialidad=%25%25%25&d-4015021-e=1&6578706f7274=1%20%C2%A0"
+    },
+    "2026-11": {
+      "authority": "Ministerio de Sanidad",
+      "file_size": 4531357,
+      "mime_type": "text/csv",
+      "original_filename": "20261101_Nomenclator_de_Facturacion.csv",
+      "parser_version": "1",
+      "retrieved_at": "2026-11-01T12:17:18+00:00",
+      "sha256": "433dc6ecdfeb5367c505b60325143397f174568306964e392dfa34600a069fdb",
+      "snapshot": "2026-11",
       "source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do?metodo=buscarProductos&especialidad=%25%25%25&d-4015021-e=1&6578706f7274=1%20%C2%A0"
     }
   }

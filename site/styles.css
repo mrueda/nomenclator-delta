@@ -76,6 +76,7 @@ main { width: min(1280px, calc(100% - 2rem)); margin: 0 auto; }
 .hero-copy > p:last-child { max-width: 720px; margin: 1.15rem 0 0; color: var(--muted); font-size: clamp(1rem, 1.5vw, 1.1rem); line-height: 1.6; }
 .period-card { padding: 0.9rem 1rem; border: 1px solid var(--line); border-left: 3px solid #d58a3a; border-radius: 10px; background: var(--surface); box-shadow: 0 4px 14px rgba(24, 32, 42, 0.05); }
 .period-card > span, .period-card small { display: block; color: var(--muted); font-size: 0.78rem; }
+.coverage-warning { margin: 0.65rem 0 0; padding: 0.65rem 0.8rem; border-left: 3px solid var(--warning); background: var(--warning-soft); color: var(--warning); font-size: 0.8rem; line-height: 1.5; }
 .period-tabs { display: flex; gap: 0.65rem; margin: 0.55rem -0.35rem 0.45rem; padding: 0.15rem 0.35rem 0.35rem; overflow-x: auto; overscroll-behavior-inline: contain; scrollbar-width: thin; }
 .period-year-group, .period-pill-row { display: flex; align-items: center; gap: 0.4rem; flex: 0 0 auto; }
 .period-year-group + .period-year-group { padding-left: 0.65rem; border-left: 1px solid var(--line); }
@@ -144,7 +145,7 @@ main { width: min(1280px, calc(100% - 2rem)); margin: 0 auto; }
 .event { padding-left: 1rem; border-left: 2px solid var(--line); }
 .event header { display: flex; justify-content: space-between; gap: 0.7rem; align-items: baseline; }
 .event strong { font-size: 0.82rem; }
-.event time { color: var(--muted); font-size: 0.68rem; }
+.event header > span { color: var(--muted); font-size: 0.68rem; }
 .event-field { margin: 0.2rem 0 0.45rem; color: var(--muted); font-size: 0.7rem; }
 .value-change { display: grid; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr); gap: 0.45rem; align-items: center; }
 .value { padding: 0.5rem; border-radius: 6px; background: #f0f3f5; font-size: 0.72rem; overflow-wrap: anywhere; }

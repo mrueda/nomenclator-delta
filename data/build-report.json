@@ -1,33 +1,33 @@
 {
-  "added": 39,
-  "change_events": 479,
-  "changed_products": 237,
+  "added": 159,
+  "change_events": 701,
+  "changed_products": 337,
   "counts_by_type": {
-    "GENERIC_NAME_CHANGED": 2,
-    "HOMOGENEOUS_GROUP_CHANGED": 6,
-    "LABORATORY_CHANGED": 3,
-    "LISTING_DATE_CHANGED": 8,
-    "NAME_CHANGED": 73,
-    "PRICE_CHANGED": 22,
-    "PRODUCT_ADDED": 39,
+    "ACTIVE_INGREDIENT_CHANGED": 2,
+    "HOMOGENEOUS_GROUP_CHANGED": 9,
+    "LABORATORY_CHANGED": 40,
+    "LISTING_DATE_CHANGED": 10,
+    "NAME_CHANGED": 17,
+    "PRICE_CHANGED": 147,
+    "PRODUCT_ADDED": 159,
     "PRODUCT_REMOVED": 51,
-    "REMOVAL_DATE_CHANGED": 136,
-    "STATUS_CHANGED": 139
+    "REMOVAL_DATE_CHANGED": 110,
+    "STATUS_CHANGED": 156
   },
   "errors": [],
-  "from_product_count": 20559,
-  "from_snapshot": "2026-08",
+  "from_product_count": 20547,
+  "from_snapshot": "2026-09",
   "normalized_records": {
-    "2026-08": 20559,
-    "2026-09": 20547
+    "2026-09": 20547,
+    "2026-11": 20655
   },
   "removed": 51,
   "source_records": {
-    "2026-08": 20559,
-    "2026-09": 20547
+    "2026-09": 20547,
+    "2026-11": 20655
   },
-  "to_product_count": 20547,
-  "to_snapshot": "2026-09",
-  "transition": "2026-08_to_2026-09",
+  "to_product_count": 20655,
+  "to_snapshot": "2026-11",
+  "transition": "2026-09_to_2026-11",
   "warnings": []
 }

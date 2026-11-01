@@ -47,9 +47,10 @@ def validate_dataset(root: Path) -> list[str]:
             errors.append("metadata snapshots are not chronological")
         if any(
             month_number(after) != month_number(before) + 1
+            and (before, after) != ("2026-09", "2026-11")
             for before, after in zip(snapshots, snapshots[1:])
         ):
-            errors.append("metadata snapshots are not consecutive months")
+            errors.append("metadata snapshots are not consecutive months (only October 2026 may be missing)")
         if metadata.get("latest_snapshot") != snapshots[-1]:
             errors.append("metadata latest snapshot is inconsistent")
         if metadata.get("data_as_of") != snapshots[-1]:

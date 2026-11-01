@@ -62,6 +62,7 @@ nomenclator-delta build \
 | `--to-metadata PATH` | no | generated from artifact | Later provenance sidecar. |
 | `--output PATH` | no | `data` | Generated static data root. |
 | `--minimum-records N` | no | `15000` | Sanity threshold per source snapshot. |
+| `--allow-gap` | no | off | One-time September → November 2026 exception only. All other gaps are rejected. |
 
 In an empty output directory, `build` creates the first comparison and needs
 both raw source files. In an existing dataset, the new month must follow the

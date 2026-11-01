@@ -1,0 +1,112 @@
+{
+  "cn": "767818",
+  "current": {
+    "active_ingredients": [
+      "CITISINICLINA"
+    ],
+    "contribution": "NORMAL",
+    "laboratory": {
+      "code": "1158",
+      "name": "ADAMED LABORATORIOS, S.L.U"
+    },
+    "medicine_name": "RECIGARUM 1,5 MG/DOSIS SOLUCION ORAL, 1 envase de 22 ml (100 dosis)",
+    "prices": {
+      "homogeneous_group_minimum": null,
+      "reference": "111.09",
+      "retail_with_vat": "111.09"
+    },
+    "status": "ALTA"
+  },
+  "events": [
+    {
+      "after": {
+        "code": "4362",
+        "name": "CITISINICLINA (CITISINA) 1,5MG/DOSIS 100 DOSIS SOLUCION/SUSPENSION ORAL"
+      },
+      "before": {
+        "code": null,
+        "name": null
+      },
+      "change_label_es": "Cambio de agrupación homogénea",
+      "change_type": "HOMOGENEOUS_GROUP_CHANGED",
+      "cn": "767818",
+      "field": "homogeneous_group",
+      "field_label_es": "Agrupación homogénea",
+      "from_snapshot": "2026-09",
+      "id": "2026-09_to_2026-11:767818:HOMOGENEOUS_GROUP_CHANGED:0",
+      "source": {
+        "authority": "Ministerio de Sanidad",
+        "from_snapshot": "2026-09",
+        "official_source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do",
+        "to_snapshot": "2026-11"
+      },
+      "to_snapshot": "2026-11"
+    }
+  ],
+  "snapshots": [
+    {
+      "snapshot": "2026-09",
+      "state": {
+        "active_ingredients": [
+          "CITISINICLINA"
+        ],
+        "contribution": "NORMAL",
+        "laboratory": {
+          "code": "1158",
+          "name": "ADAMED LABORATORIOS, S.L.U"
+        },
+        "medicine_name": "RECIGARUM 1,5 MG/DOSIS SOLUCION ORAL, 1 envase de 22 ml (100 dosis)",
+        "prices": {
+          "homogeneous_group_minimum": null,
+          "reference": "111.09",
+          "retail_with_vat": "111.09"
+        },
+        "status": "ALTA"
+      }
+    },
+    {
+      "snapshot": "2026-11",
+      "state": {
+        "active_ingredients": [
+          "CITISINICLINA"
+        ],
+        "contribution": "NORMAL",
+        "laboratory": {
+          "code": "1158",
+          "name": "ADAMED LABORATORIOS, S.L.U"
+        },
+        "medicine_name": "RECIGARUM 1,5 MG/DOSIS SOLUCION ORAL, 1 envase de 22 ml (100 dosis)",
+        "prices": {
+          "homogeneous_group_minimum": null,
+          "reference": "111.09",
+          "retail_with_vat": "111.09"
+        },
+        "status": "ALTA"
+      }
+    }
+  ],
+  "sources": {
+    "2026-09": {
+      "authority": "Ministerio de Sanidad",
+      "file_size": 4505330,
+      "mime_type": "text/csv",
+      "original_filename": "20260909_Nomenclator_de_Facturacion.csv",
+      "parser_version": "1",
+      "retrieved_at": "2026-09-09T10:59:15+00:00",
+      "sha256": "736cf943a48681032c86e342c0afad10a4435e59186a79c7175654385f7ae451",
+      "snapshot": "2026-09",
+      "source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do?metodo=buscarProductos&especialidad=%25%25%25&d-4015021-e=1&6578706f7274=1%20%C2%A0"
+    },
+    "2026-11": {
+      "authority": "Ministerio de Sanidad",
+      "file_size": 4531357,
+      "mime_type": "text/csv",
+      "original_filename": "20261101_Nomenclator_de_Facturacion.csv",
+      "parser_version": "1",
+      "retrieved_at": "2026-11-01T12:17:18+00:00",
+      "sha256": "433dc6ecdfeb5367c505b60325143397f174568306964e392dfa34600a069fdb",
+      "snapshot": "2026-11",
+      "source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do?metodo=buscarProductos&especialidad=%25%25%25&d-4015021-e=1&6578706f7274=1%20%C2%A0"
+    }
+  }
+}

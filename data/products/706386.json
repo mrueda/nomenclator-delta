@@ -1,0 +1,124 @@
+{
+  "cn": "706386",
+  "current": {
+    "active_ingredients": [
+      "FUROSEMIDA"
+    ],
+    "contribution": "ESPECIAL",
+    "laboratory": {
+      "code": "1128",
+      "name": "COMBIX, S.L.U"
+    },
+    "medicine_name": "FUROSEMIDA COMBIX 40 MG COMPRIMIDOS EFG , 30 comprimidos",
+    "prices": {
+      "homogeneous_group_minimum": "0.67",
+      "reference": "0.56",
+      "retail_with_vat": "0.56"
+    },
+    "status": "ALTA"
+  },
+  "events": [
+    {
+      "after": "0.56",
+      "before": "0.67",
+      "change_label_es": "Cambio de precio",
+      "change_type": "PRICE_CHANGED",
+      "cn": "706386",
+      "field": "prices.reference",
+      "field_label_es": "Precio de referencia",
+      "from_snapshot": "2026-09",
+      "id": "2026-09_to_2026-11:706386:PRICE_CHANGED:1",
+      "source": {
+        "authority": "Ministerio de Sanidad",
+        "from_snapshot": "2026-09",
+        "official_source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do",
+        "to_snapshot": "2026-11"
+      },
+      "to_snapshot": "2026-11"
+    },
+    {
+      "after": "0.56",
+      "before": "0.67",
+      "change_label_es": "Cambio de precio",
+      "change_type": "PRICE_CHANGED",
+      "cn": "706386",
+      "field": "prices.retail_with_vat",
+      "field_label_es": "Precio de venta al público con IVA",
+      "from_snapshot": "2026-09",
+      "id": "2026-09_to_2026-11:706386:PRICE_CHANGED:0",
+      "source": {
+        "authority": "Ministerio de Sanidad",
+        "from_snapshot": "2026-09",
+        "official_source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do",
+        "to_snapshot": "2026-11"
+      },
+      "to_snapshot": "2026-11"
+    }
+  ],
+  "snapshots": [
+    {
+      "snapshot": "2026-09",
+      "state": {
+        "active_ingredients": [
+          "FUROSEMIDA"
+        ],
+        "contribution": "ESPECIAL",
+        "laboratory": {
+          "code": "1128",
+          "name": "COMBIX, S.L.U"
+        },
+        "medicine_name": "FUROSEMIDA COMBIX 40 MG COMPRIMIDOS EFG , 30 comprimidos",
+        "prices": {
+          "homogeneous_group_minimum": "0.67",
+          "reference": "0.67",
+          "retail_with_vat": "0.67"
+        },
+        "status": "ALTA"
+      }
+    },
+    {
+      "snapshot": "2026-11",
+      "state": {
+        "active_ingredients": [
+          "FUROSEMIDA"
+        ],
+        "contribution": "ESPECIAL",
+        "laboratory": {
+          "code": "1128",
+          "name": "COMBIX, S.L.U"
+        },
+        "medicine_name": "FUROSEMIDA COMBIX 40 MG COMPRIMIDOS EFG , 30 comprimidos",
+        "prices": {
+          "homogeneous_group_minimum": "0.67",
+          "reference": "0.56",
+          "retail_with_vat": "0.56"
+        },
+        "status": "ALTA"
+      }
+    }
+  ],
+  "sources": {
+    "2026-09": {
+      "authority": "Ministerio de Sanidad",
+      "file_size": 4505330,
+      "mime_type": "text/csv",
+      "original_filename": "20260909_Nomenclator_de_Facturacion.csv",
+      "parser_version": "1",
+      "retrieved_at": "2026-09-09T10:59:15+00:00",
+      "sha256": "736cf943a48681032c86e342c0afad10a4435e59186a79c7175654385f7ae451",
+      "snapshot": "2026-09",
+      "source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do?metodo=buscarProductos&especialidad=%25%25%25&d-4015021-e=1&6578706f7274=1%20%C2%A0"
+    },
+    "2026-11": {
+      "authority": "Ministerio de Sanidad",
+      "file_size": 4531357,
+      "mime_type": "text/csv",
+      "original_filename": "20261101_Nomenclator_de_Facturacion.csv",
+      "parser_version": "1",
+      "retrieved_at": "2026-11-01T12:17:18+00:00",
+      "sha256": "433dc6ecdfeb5367c505b60325143397f174568306964e392dfa34600a069fdb",
+      "snapshot": "2026-11",
+      "source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do?metodo=buscarProductos&especialidad=%25%25%25&d-4015021-e=1&6578706f7274=1%20%C2%A0"
+    }
+  }
+}

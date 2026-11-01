@@ -69,8 +69,13 @@ def build_comparison(
     to_metadata: Path | None = None,
     minimum_records: int = 15_000,
     maximum_count_change_ratio: float = 0.2,
+    allow_gap: bool = False,
 ) -> dict[str, Any]:
-    require_consecutive_snapshots(from_snapshot, to_snapshot)
+    if allow_gap:
+        if (from_snapshot, to_snapshot) != ("2026-09", "2026-11"):
+            raise ValueError("gap exception is limited to September–November 2026")
+    else:
+        require_consecutive_snapshots(from_snapshot, to_snapshot)
     existing_metadata = read_existing_metadata(output)
 
     if existing_metadata is None:

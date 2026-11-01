@@ -1,0 +1,102 @@
+{
+  "cn": "731028",
+  "current": {
+    "active_ingredients": [
+      "PARACETAMOL"
+    ],
+    "contribution": "NORMAL",
+    "laboratory": {
+      "code": "805",
+      "name": "STADA, S.L"
+    },
+    "medicine_name": "PARACETAMOL STADAGEN 650 MG COMPRIMIDOS EFG, 40 comprimidos",
+    "prices": {
+      "homogeneous_group_minimum": "1.31",
+      "reference": "1.31",
+      "retail_with_vat": "1.31"
+    },
+    "status": "ALTA"
+  },
+  "events": [
+    {
+      "after": {
+        "active_ingredients": [
+          "PARACETAMOL"
+        ],
+        "contribution": "NORMAL",
+        "laboratory": {
+          "code": "805",
+          "name": "STADA, S.L"
+        },
+        "medicine_name": "PARACETAMOL STADAGEN 650 MG COMPRIMIDOS EFG, 40 comprimidos",
+        "prices": {
+          "homogeneous_group_minimum": "1.31",
+          "reference": "1.31",
+          "retail_with_vat": "1.31"
+        },
+        "status": "ALTA"
+      },
+      "before": null,
+      "change_label_es": "Alta en la comparación",
+      "change_type": "PRODUCT_ADDED",
+      "cn": "731028",
+      "field": null,
+      "field_label_es": "Presentación",
+      "from_snapshot": "2026-09",
+      "id": "2026-09_to_2026-11:731028:PRODUCT_ADDED:0",
+      "source": {
+        "authority": "Ministerio de Sanidad",
+        "from_snapshot": "2026-09",
+        "official_source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do",
+        "to_snapshot": "2026-11"
+      },
+      "to_snapshot": "2026-11"
+    }
+  ],
+  "snapshots": [
+    {
+      "snapshot": "2026-11",
+      "state": {
+        "active_ingredients": [
+          "PARACETAMOL"
+        ],
+        "contribution": "NORMAL",
+        "laboratory": {
+          "code": "805",
+          "name": "STADA, S.L"
+        },
+        "medicine_name": "PARACETAMOL STADAGEN 650 MG COMPRIMIDOS EFG, 40 comprimidos",
+        "prices": {
+          "homogeneous_group_minimum": "1.31",
+          "reference": "1.31",
+          "retail_with_vat": "1.31"
+        },
+        "status": "ALTA"
+      }
+    }
+  ],
+  "sources": {
+    "2026-09": {
+      "authority": "Ministerio de Sanidad",
+      "file_size": 4505330,
+      "mime_type": "text/csv",
+      "original_filename": "20260909_Nomenclator_de_Facturacion.csv",
+      "parser_version": "1",
+      "retrieved_at": "2026-09-09T10:59:15+00:00",
+      "sha256": "736cf943a48681032c86e342c0afad10a4435e59186a79c7175654385f7ae451",
+      "snapshot": "2026-09",
+      "source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do?metodo=buscarProductos&especialidad=%25%25%25&d-4015021-e=1&6578706f7274=1%20%C2%A0"
+    },
+    "2026-11": {
+      "authority": "Ministerio de Sanidad",
+      "file_size": 4531357,
+      "mime_type": "text/csv",
+      "original_filename": "20261101_Nomenclator_de_Facturacion.csv",
+      "parser_version": "1",
+      "retrieved_at": "2026-11-01T12:17:18+00:00",
+      "sha256": "433dc6ecdfeb5367c505b60325143397f174568306964e392dfa34600a069fdb",
+      "snapshot": "2026-11",
+      "source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do?metodo=buscarProductos&especialidad=%25%25%25&d-4015021-e=1&6578706f7274=1%20%C2%A0"
+    }
+  }
+}

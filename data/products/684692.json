@@ -1,0 +1,124 @@
+{
+  "cn": "684692",
+  "current": {
+    "active_ingredients": [
+      "LEVETIRACETAM"
+    ],
+    "contribution": "ESPECIAL",
+    "laboratory": {
+      "code": "1240",
+      "name": "ARISTO PHARMA IBERIA, S.L."
+    },
+    "medicine_name": "LEVETIRACETAM ARISTOGEN 1000 mg COMPRIMIDOS RCUBIERTOS CON PELICULA EFG , 30 comprimidos",
+    "prices": {
+      "homogeneous_group_minimum": "54.53",
+      "reference": "54.53",
+      "retail_with_vat": "54.53"
+    },
+    "status": "BAJA GENERAL"
+  },
+  "events": [
+    {
+      "after": "2026-11-01",
+      "before": null,
+      "change_label_es": "Cambio de fecha de baja",
+      "change_type": "REMOVAL_DATE_CHANGED",
+      "cn": "684692",
+      "field": "listed_until",
+      "field_label_es": "Fecha de baja en el nomenclátor",
+      "from_snapshot": "2026-09",
+      "id": "2026-09_to_2026-11:684692:REMOVAL_DATE_CHANGED:1",
+      "source": {
+        "authority": "Ministerio de Sanidad",
+        "from_snapshot": "2026-09",
+        "official_source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do",
+        "to_snapshot": "2026-11"
+      },
+      "to_snapshot": "2026-11"
+    },
+    {
+      "after": "BAJA GENERAL",
+      "before": "SUSPENSION TEMPORAL GENERAL",
+      "change_label_es": "Cambio de estado",
+      "change_type": "STATUS_CHANGED",
+      "cn": "684692",
+      "field": "status",
+      "field_label_es": "Estado",
+      "from_snapshot": "2026-09",
+      "id": "2026-09_to_2026-11:684692:STATUS_CHANGED:0",
+      "source": {
+        "authority": "Ministerio de Sanidad",
+        "from_snapshot": "2026-09",
+        "official_source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do",
+        "to_snapshot": "2026-11"
+      },
+      "to_snapshot": "2026-11"
+    }
+  ],
+  "snapshots": [
+    {
+      "snapshot": "2026-09",
+      "state": {
+        "active_ingredients": [
+          "LEVETIRACETAM"
+        ],
+        "contribution": "ESPECIAL",
+        "laboratory": {
+          "code": "1240",
+          "name": "ARISTO PHARMA IBERIA, S.L."
+        },
+        "medicine_name": "LEVETIRACETAM ARISTOGEN 1000 mg COMPRIMIDOS RCUBIERTOS CON PELICULA EFG , 30 comprimidos",
+        "prices": {
+          "homogeneous_group_minimum": "54.53",
+          "reference": "54.53",
+          "retail_with_vat": "54.53"
+        },
+        "status": "SUSPENSION TEMPORAL GENERAL"
+      }
+    },
+    {
+      "snapshot": "2026-11",
+      "state": {
+        "active_ingredients": [
+          "LEVETIRACETAM"
+        ],
+        "contribution": "ESPECIAL",
+        "laboratory": {
+          "code": "1240",
+          "name": "ARISTO PHARMA IBERIA, S.L."
+        },
+        "medicine_name": "LEVETIRACETAM ARISTOGEN 1000 mg COMPRIMIDOS RCUBIERTOS CON PELICULA EFG , 30 comprimidos",
+        "prices": {
+          "homogeneous_group_minimum": "54.53",
+          "reference": "54.53",
+          "retail_with_vat": "54.53"
+        },
+        "status": "BAJA GENERAL"
+      }
+    }
+  ],
+  "sources": {
+    "2026-09": {
+      "authority": "Ministerio de Sanidad",
+      "file_size": 4505330,
+      "mime_type": "text/csv",
+      "original_filename": "20260909_Nomenclator_de_Facturacion.csv",
+      "parser_version": "1",
+      "retrieved_at": "2026-09-09T10:59:15+00:00",
+      "sha256": "736cf943a48681032c86e342c0afad10a4435e59186a79c7175654385f7ae451",
+      "snapshot": "2026-09",
+      "source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do?metodo=buscarProductos&especialidad=%25%25%25&d-4015021-e=1&6578706f7274=1%20%C2%A0"
+    },
+    "2026-11": {
+      "authority": "Ministerio de Sanidad",
+      "file_size": 4531357,
+      "mime_type": "text/csv",
+      "original_filename": "20261101_Nomenclator_de_Facturacion.csv",
+      "parser_version": "1",
+      "retrieved_at": "2026-11-01T12:17:18+00:00",
+      "sha256": "433dc6ecdfeb5367c505b60325143397f174568306964e392dfa34600a069fdb",
+      "snapshot": "2026-11",
+      "source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do?metodo=buscarProductos&especialidad=%25%25%25&d-4015021-e=1&6578706f7274=1%20%C2%A0"
+    }
+  }
+}

@@ -11,6 +11,32 @@ from nomenclator_delta.validate import validate_dataset
 FIXTURES = Path(__file__).parent / "fixtures"
 
 
+def test_explicit_gap_preserves_history_and_allows_next_month(tmp_path):
+    output = tmp_path / "data"
+    build_comparison(FIXTURES / "2026-07.csv", FIXTURES / "2026-08.csv",
+                     "2026-08", "2026-09", output, minimum_records=1)
+    previous = dataset_digest(output / "snapshots")
+    build_comparison(None, FIXTURES / "2026-09.csv", "2026-09", "2026-11",
+                     output, minimum_records=1, allow_gap=True)
+    assert validate_dataset(output) == []
+    assert not (output / "snapshots" / "2026-10").exists()
+    assert all(dataset_digest(output / "snapshots")[path] == digest
+               for path, digest in previous.items())
+    build_comparison(None, FIXTURES / "2026-09.csv", "2026-11", "2026-12",
+                     output, minimum_records=1)
+    assert validate_dataset(output) == []
+    assert json.loads((output / "metadata.json").read_text())["transitions"] == [
+        "2026-08_to_2026-09", "2026-09_to_2026-11", "2026-11_to_2026-12"]
+
+
+@pytest.mark.parametrize("end", ["2026-08", "2026-07", "2026-10", "2027-01", "invalid"])
+def test_explicit_gap_rejects_non_forward_or_invalid_month(tmp_path, end):
+    with pytest.raises(ValueError):
+        build_comparison(FIXTURES / "2026-07.csv", FIXTURES / "2026-08.csv",
+                         "2026-08", end, tmp_path / "data", minimum_records=1,
+                         allow_gap=True)
+
+
 def dataset_digest(root: Path) -> dict[str, str]:
     return {
         str(path.relative_to(root)): hashlib.sha256(path.read_bytes()).hexdigest()

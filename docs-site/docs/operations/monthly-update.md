@@ -20,6 +20,17 @@ dataset remains unchanged and Actions reports a failure. Recover the missing
 release using the manual steps below, then rerun collection. Never label a
 current export as an older month.
 
+The one-time October 2026 exception requires `--allow-gap`
+on the manual `build` command, restricted to September → November 2026.
+No other gap is accepted, even with that flag. This compares the two available releases; it
+does not create a snapshot for the missing month. The app labels the actual
+endpoints and warns that these are accumulated differences, not one month's
+changes. Changes that happened and were reversed between those endpoints are
+not observable. Scheduled collection still stops at new gaps for review.
+
+October 2026 could not be recovered. The next available comparison is
+September → November 2026; ordinary monthly collection resumes from November.
+
 Compressed original CSV bytes, checksum metadata, and the publication page
 are kept in `sources/archive/<month>/` in Git. These files survive runner
 cleanup and artifact expiry. Decompress a `.csv.gz` file before passing it to

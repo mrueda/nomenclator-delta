@@ -169,6 +169,11 @@ reimbursement, substitution, therapeutic, or clinical recommendations.
 
 ## Known limitations
 
+- October 2026 is unavailable. September and November are compared directly,
+  with an explicit missing-month warning in the app. These are net differences
+  across the interval, not November-only changes; intermediate changes that
+  were reversed cannot be observed. No October snapshot is inferred.
+
 - The public endpoint exposes the current release and does not provide an
   obvious official historical-download index.
 - Public web archives captured the June XLS but not its equivalent CSV response;

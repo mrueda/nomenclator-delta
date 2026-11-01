@@ -41,6 +41,7 @@ def main(argv: list[str] | None = None) -> None:
     build_parser.add_argument("--to-metadata", type=Path)
     build_parser.add_argument("--output", type=Path, default=Path("data"))
     build_parser.add_argument("--minimum-records", type=int, default=15_000)
+    build_parser.add_argument("--allow-gap", action="store_true", help="One-time exception for September to November 2026 only")
 
     validate_parser = commands.add_parser("validate", help="Validate generated static data")
     validate_parser.add_argument("root", type=Path, nargs="?", default=Path("data"))
@@ -64,6 +65,7 @@ def main(argv: list[str] | None = None) -> None:
             from_metadata=args.from_metadata,
             to_metadata=args.to_metadata,
             minimum_records=args.minimum_records,
+            allow_gap=args.allow_gap,
         )
         print(f"Built {metadata['transitions'][-1]} into {args.output}")
     elif args.command == "validate":

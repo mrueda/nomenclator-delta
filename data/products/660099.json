@@ -15,7 +15,7 @@
       "reference": "8.52",
       "retail_with_vat": "8.52"
     },
-    "status": "BAJA POR NO COMERCIALIZAR"
+    "status": "BAJA GENERAL"
   },
   "events": [
     {
@@ -53,6 +53,24 @@
         "to_snapshot": "2026-09"
       },
       "to_snapshot": "2026-09"
+    },
+    {
+      "after": "BAJA GENERAL",
+      "before": "BAJA POR NO COMERCIALIZAR",
+      "change_label_es": "Cambio de estado",
+      "change_type": "STATUS_CHANGED",
+      "cn": "660099",
+      "field": "status",
+      "field_label_es": "Estado",
+      "from_snapshot": "2026-09",
+      "id": "2026-09_to_2026-11:660099:STATUS_CHANGED:0",
+      "source": {
+        "authority": "Ministerio de Sanidad",
+        "from_snapshot": "2026-09",
+        "official_source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do",
+        "to_snapshot": "2026-11"
+      },
+      "to_snapshot": "2026-11"
     }
   ],
   "snapshots": [
@@ -95,6 +113,26 @@
         },
         "status": "BAJA POR NO COMERCIALIZAR"
       }
+    },
+    {
+      "snapshot": "2026-11",
+      "state": {
+        "active_ingredients": [
+          "MIRTAZAPINA"
+        ],
+        "contribution": "ESPECIAL",
+        "laboratory": {
+          "code": "1079",
+          "name": "TEVA PHARMA, S.L.U"
+        },
+        "medicine_name": "MIRTAZAPINA TEVAGEN 15 mg COMPRIMIDOS BUCODISPERSABLES EFG , 30 comprimidos",
+        "prices": {
+          "homogeneous_group_minimum": "8.52",
+          "reference": "8.52",
+          "retail_with_vat": "8.52"
+        },
+        "status": "BAJA GENERAL"
+      }
     }
   ],
   "sources": {
@@ -118,6 +156,17 @@
       "retrieved_at": "2026-09-09T10:59:15+00:00",
       "sha256": "736cf943a48681032c86e342c0afad10a4435e59186a79c7175654385f7ae451",
       "snapshot": "2026-09",
+      "source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do?metodo=buscarProductos&especialidad=%25%25%25&d-4015021-e=1&6578706f7274=1%20%C2%A0"
+    },
+    "2026-11": {
+      "authority": "Ministerio de Sanidad",
+      "file_size": 4531357,
+      "mime_type": "text/csv",
+      "original_filename": "20261101_Nomenclator_de_Facturacion.csv",
+      "parser_version": "1",
+      "retrieved_at": "2026-11-01T12:17:18+00:00",
+      "sha256": "433dc6ecdfeb5367c505b60325143397f174568306964e392dfa34600a069fdb",
+      "snapshot": "2026-11",
       "source_url": "https://www.sanidad.gob.es/profesionales/nomenclator.do?metodo=buscarProductos&especialidad=%25%25%25&d-4015021-e=1&6578706f7274=1%20%C2%A0"
     }
   }

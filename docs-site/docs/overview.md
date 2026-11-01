@@ -14,7 +14,7 @@ medicines and health products included in the *prestación farmacéutica*
 through community pharmacies (*oficinas de farmacia*). The Ministry publishes a
 new file each month.
 
-**nomenclator-delta** compares consecutive releases to answer one question:
+**nomenclator-delta** compares available releases to answer one question:
 **what changed for this Código Nacional from one published month to the next?**
 
 <div className="button-row">

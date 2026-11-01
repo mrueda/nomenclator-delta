@@ -38,7 +38,7 @@ Before diffing, the builder rejects:
 - snapshots below the configured minimum record count;
 - a product-count change above the catastrophic-change threshold;
 - supplied metadata that does not match the input bytes;
-- a non-consecutive or conflicting append to an existing dataset.
+- a conflicting append, or a non-consecutive append without explicit `--allow-gap` approval.
 
 Unknown source columns and unexpected flag values produce warnings. This makes
 a source-format change visible instead of silently ignoring it.
