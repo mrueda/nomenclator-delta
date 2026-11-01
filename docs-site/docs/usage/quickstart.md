@@ -11,10 +11,11 @@ The app is in Spanish. Open it at
 At the top of the page, you can see which two months are being compared and how
 many presentations are in the later file.
 
-Use the compact period pills—such as **Jun → Jul 2026 (308)**—to change the
-comparison. The number in parentheses is the total number of changes found for
-that period, including additions and removals. The latest period is selected by
-default, appears first, and is marked **Último disponible**.
+Use **Periodo comparado** to choose a comparison. The dropdown lists the newest
+period first, selected by default and marked **Último disponible**. Below it,
+the app shows the latest publication available in its dataset, the selected
+period's counts, and any missing-month warning. The latest available publication
+does not imply that a newer Ministry release has already been collected.
 
 The app normally compares consecutive monthly releases. October 2026 is the
 one-time exception: September is compared directly with November. A short

@@ -23,7 +23,7 @@
   document.addEventListener("DOMContentLoaded", init);
 
   async function init() {
-    ["periodTabs", "datasetStatus", "searchInput", "clearSearch", "changeFilter",
+    ["periodSelect", "datasetStatus", "searchInput", "clearSearch", "changeFilter",
       "changesNavCount", "addedNavCount", "removedNavCount",
       "viewEyebrow", "resultsTitle", "resultCount", "results", "detailPanel", "disclaimer"
     ].forEach(function (id) { els[id] = document.getElementById(id); });
@@ -37,14 +37,13 @@
       state.products = payloads[1];
       state.transitions = (state.metadata.transitions || []).slice().sort(compareTransitionIds);
       if (!state.transitions.length) throw new Error("No hay comparaciones publicadas");
-      renderPeriodTabs();
+      renderPeriodSelect();
       await loadTransition(state.transitions[state.transitions.length - 1]);
       if (!state.summary) return;
       openLinkedProduct();
-      hydrateTransitionSummaries();
     } catch (error) {
       els.datasetStatus.textContent = "No se pudieron cargar los datos";
-      els.periodTabs.setAttribute("aria-busy", "false");
+      els.periodSelect.setAttribute("aria-busy", "false");
       els.results.innerHTML = '<p class="error">Los datos estáticos no están disponibles. Vuelve a intentarlo más tarde.</p>';
     }
   }
@@ -61,10 +60,8 @@
     els.searchInput.addEventListener("input", render);
     els.clearSearch.addEventListener("click", resetApplication);
     els.changeFilter.addEventListener("change", render);
-    els.periodTabs.addEventListener("click", function (event) {
-      const button = event.target.closest("button[data-transition]");
-      if (!button || button.disabled || button.dataset.transition === state.transition) return;
-      loadTransition(button.dataset.transition);
+    els.periodSelect.addEventListener("change", function () {
+      loadTransition(els.periodSelect.value);
     });
     document.querySelectorAll(".nav-button").forEach(function (button) {
       button.addEventListener("click", function () {
@@ -76,7 +73,6 @@
 
   async function resetApplication() {
     state.visibleCount = 100;
-    els.periodTabs.scrollLeft = 0;
     const latestTransition = state.transitions[state.transitions.length - 1];
     els.searchInput.value = "";
     els.changeFilter.value = "";
@@ -91,7 +87,7 @@
     }
     if (state.summary) {
       renderHeader();
-      renderPeriodTabs();
+      renderPeriodSelect();
       render();
     }
   }
@@ -110,9 +106,9 @@
     const previous = state.transition;
     state.loadingTransition = transition;
     document.getElementById("exportCsv").disabled = true;
-    els.periodTabs.setAttribute("aria-busy", "true");
+    els.periodSelect.setAttribute("aria-busy", "true");
     els.datasetStatus.textContent = "Cargando la comparación…";
-    renderPeriodTabs();
+    renderPeriodSelect();
     try {
       const payload = await fetchTransition(transition);
       if (state.loadingTransition !== transition) return;
@@ -126,7 +122,7 @@
       indexEvents();
       populateFilters();
       renderHeader();
-      renderPeriodTabs();
+      renderPeriodSelect();
       render();
       renderDetailPlaceholder();
     } catch (error) {
@@ -140,13 +136,13 @@
         els.datasetStatus.textContent = "No se pudo cargar la comparación seleccionada";
         els.results.innerHTML = '<p class="error">No se pudo cargar este periodo. Vuelve a intentarlo más tarde.</p>';
       }
-      renderPeriodTabs();
+      renderPeriodSelect();
     } finally {
       if (state.loadingTransition === transition) {
         state.loadingTransition = null;
         document.getElementById("exportCsv").disabled = !state.filteredProducts.length;
-        els.periodTabs.setAttribute("aria-busy", "false");
-        renderPeriodTabs();
+        els.periodSelect.setAttribute("aria-busy", "false");
+        renderPeriodSelect();
       }
     }
   }
@@ -166,46 +162,15 @@
     return promise;
   }
 
-  async function hydrateTransitionSummaries() {
-    let updated = false;
-    for (const transition of state.transitions) {
-      if (state.transitionPayloads.has(transition)) continue;
-      try {
-        await fetchTransition(transition);
-        updated = true;
-      } catch (error) {
-        // A missing historical file must not make the current comparison unusable.
-      }
-    }
-    if (updated) renderPeriodTabs();
-  }
-
-  function renderPeriodTabs() {
+  function renderPeriodSelect() {
     if (!state.transitions.length) return;
-    const years = new Set(state.transitions.map(function (transition) {
-      return transitionParts(transition).to.split("-")[0];
-    }));
-    const showYears = years.size > 1;
-    const groups = new Map();
-    // Display newest first without changing the chronological data used by reset.
-    state.transitions.slice().reverse().forEach(function (transition) {
-      const year = transitionParts(transition).to.split("-")[0];
-      if (!groups.has(year)) groups.set(year, []);
-      groups.get(year).push(transition);
-    });
-    els.periodTabs.innerHTML = Array.from(groups.entries()).map(function (entry) {
-      const year = entry[0];
-      const buttons = entry[1].map(function (transition) {
-        const payload = state.transitionPayloads.get(transition);
-        const count = payload && payload.summary ? Number(payload.summary.change_events || 0) : null;
-        const countText = (count === null ? "" : ` (${formatNumber(count)})`) + (transition === state.transitions[state.transitions.length - 1] ? '<span class="latest-badge">Último disponible</span>' : "");
-        const description = transitionDescription(transition, count);
-        const active = transition === state.transition;
-        const loading = transition === state.loadingTransition;
-        return `<button class="period-pill${active ? " is-active" : ""}" type="button" data-transition="${escapeHtml(transition)}" aria-pressed="${active ? "true" : "false"}" aria-label="${escapeHtml(description)}" title="${escapeHtml(description)}"${state.loadingTransition ? " disabled" : ""}>${escapeHtml(compactTransitionLabel(transition))}${countText}${loading ? '<span class="period-spinner" aria-hidden="true"></span>' : ""}</button>`;
-      }).join("");
-      return `<div class="period-year-group">${showYears ? `<span class="period-year">${escapeHtml(year)}</span>` : ""}<div class="period-pill-row">${buttons}</div></div>`;
+    const latest = state.transitions[state.transitions.length - 1];
+    els.periodSelect.innerHTML = state.transitions.slice().reverse().map(function (transition) {
+      const label = compactTransitionLabel(transition) + (transition === latest ? " · Último disponible" : "");
+      return `<option value="${escapeHtml(transition)}">${escapeHtml(label)}</option>`;
     }).join("");
+    els.periodSelect.value = state.loadingTransition || state.transition || latest;
+    els.periodSelect.disabled = Boolean(state.loadingTransition);
   }
 
   function indexEvents() {
@@ -245,6 +210,7 @@
     warning.hidden = missing.length === 0;
     document.getElementById("coverageSummary").textContent = missing.length ? `Sin datos de ${missing.join(", ")}. Comparación acumulada: ${formatMonth(state.summary.from_snapshot)} → ${formatMonth(state.summary.to_snapshot)}.` : "";
     warning.querySelector("details").open = false;
+    document.getElementById("dataFreshness").textContent = `Última publicación disponible: ${formatMonth(state.metadata.latest_snapshot)}`;
     const visibleChanges = state.summary.added + state.summary.removed + state.summary.changed_products;
     const priceChanges = (state.summary.counts_by_type || {}).PRICE_CHANGED || 0;
     els.datasetStatus.textContent = `${formatNumber(state.summary.to_product_count)} presentaciones en ${formatMonth(state.summary.to_snapshot)} · ${formatNumber(state.summary.changed_products)} modificadas · ${formatNumber(priceChanges)} cambios de precio`;
@@ -587,12 +553,6 @@
     const date = new Date(Number(parts[0]), Number(parts[1]) - 1, 1);
     const label = new Intl.DateTimeFormat("es-ES", { month: "short" }).format(date).replace(/\.$/, "");
     return label.charAt(0).toUpperCase() + label.slice(1);
-  }
-  function transitionDescription(transition, count) {
-    const parts = transitionParts(transition);
-    const base = `Comparar ${formatMonth(parts.from)} con ${formatMonth(parts.to)}`;
-    if (count === null) return base;
-    return `${base}: ${formatNumber(count)} ${count === 1 ? "cambio observado" : "cambios observados"}`;
   }
   function escapeHtml(value) {
     return String(value === null || value === undefined ? "" : value)

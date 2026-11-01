@@ -32,20 +32,8 @@
     <main>
       <section class="hero" id="inicio">
         <div class="hero-copy">
-          <p class="eyebrow">Comparador mensual · datos oficiales</p>
-          <h1>Encuentra qué cambió para una presentación.</h1>
-          <p>El Nomenclátor de facturación del Ministerio de Sanidad reúne los medicamentos y productos sanitarios incluidos en la prestación farmacéutica del SNS.</p>
-        </div>
-        <div class="period-card" aria-live="polite">
-          <span id="periodLabel">Periodo comparado</span>
-          <div id="periodTabs" class="period-tabs" role="group" aria-labelledby="periodLabel" aria-busy="true">
-            <span class="period-loading">Cargando…</span>
-          </div>
-          <small id="datasetStatus">Preparando el índice de búsqueda</small>
-          <div id="coverageWarning" class="coverage-warning" hidden>
-            <p id="coverageSummary"></p>
-            <details><summary>Más información</summary><p>No se puede determinar en qué mes se produjo cada cambio ni detectar cambios intermedios que se hayan revertido. No se han reconstruido los datos del mes ausente.</p></details>
-          </div>
+          <h1>Cambios en el Nomenclátor</h1>
+          <p>Compara medicamentos y productos sanitarios incluidos en la prestación farmacéutica del SNS, según el Ministerio de Sanidad.</p>
         </div>
       </section>
 
@@ -64,6 +52,16 @@
               <option value="">Todos los cambios</option>
             </select>
           </label>
+        </div>
+        <div class="period-card" aria-live="polite">
+          <div class="period-choice"><label for="periodSelect">Periodo comparado</label>
+          <select id="periodSelect" aria-busy="true" disabled><option>Cargando…</option></select></div>
+          <div class="period-data"><small id="dataFreshness"></small>
+          <small id="datasetStatus">Preparando el índice de búsqueda</small></div>
+          <div id="coverageWarning" class="coverage-warning" hidden>
+            <p id="coverageSummary"></p>
+            <details><summary>Más información</summary><p>No se puede determinar en qué mes se produjo cada cambio ni detectar cambios intermedios que se hayan revertido. No se han reconstruido los datos del mes ausente.</p></details>
+          </div>
         </div>
       </section>
 
