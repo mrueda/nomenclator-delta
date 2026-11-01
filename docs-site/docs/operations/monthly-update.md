@@ -6,10 +6,28 @@ description: Operator procedure for appending one reviewed Nomenclátor comparis
 
 # Monthly update
 
-New Nomenclátor data is collected and reviewed locally once a month. GitHub
-Pages publishes after every push to `main` and also runs on a monthly schedule.
-Those deployments use committed data only: they do not look for, download, or
-parse a new release.
+GitHub Actions checks for a new Ministry publication at 05:17 UTC on the 1st,
+5th, and 10th of each month. It downloads only a newer release, compares it
+with the saved previous snapshot, validates the result, commits it to `main`,
+and deploys the app and docs in the same run. Ordinary pushes only publish
+committed data. Manual runs collect by default; turn off the `collect` input
+to deploy without collection.
+
+The publication month is read from the official page before and after the
+download. Existing months are left unchanged. A missing intervening month
+stops publication: the new source is archived and committed, but the public
+dataset remains unchanged and Actions reports a failure. Recover the missing
+release using the manual steps below, then rerun collection. Never label a
+current export as an older month.
+
+Compressed original CSV bytes, checksum metadata, and the publication page
+are kept in `sources/archive/<month>/` in Git. These files survive runner
+cleanup and artifact expiry. Decompress a `.csv.gz` file before passing it to
+the manual builder. GitHub's token commits do not trigger another workflow;
+the collecting run builds and deploys its own output. A rejected push stops
+deployment, so concurrent edits cannot silently overwrite `main`.
+
+The steps below remain available for manual recovery and source review.
 
 ## 1. Confirm the release
 
@@ -93,9 +111,8 @@ layout.
 
 Commit the reviewed generated changes on `main`, together with any required
 parser, schema, test, or documentation updates. Pushing `main` runs CI and
-publishes the site immediately. The monthly scheduled deployment republishes
-the same committed files. Both validate the repository again, but neither
-collects a source file nor rebuilds old comparisons.
+publishes the site immediately. Scheduled and collecting manual runs append
+only the new monthly source; historical comparisons are preserved.
 
 If a reviewed dataset must be withdrawn, revert the data-producing commit and
 let Pages publish the previous valid commit. Do not manually edit generated

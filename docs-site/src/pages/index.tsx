@@ -28,7 +28,7 @@ const developerLinks = [
   {
     eyebrow: 'Pipeline',
     title: 'Add a monthly comparison',
-    text: 'Archive a release locally, compare it with the previous month, review the result, and commit it.',
+    text: 'Follow automatic monthly updates or recover a missing release using the manual workflow.',
     to: '/docs/operations/monthly-update',
   },
   {
@@ -40,7 +40,7 @@ const developerLinks = [
   {
     eyebrow: 'Design',
     title: 'Understand the architecture',
-    text: 'See which work happens locally and which files GitHub Pages publishes.',
+    text: 'See how monthly collection, validation, and GitHub Pages publication work.',
     to: '/docs/technical-details/architecture',
   },
 ];

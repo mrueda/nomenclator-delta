@@ -36,9 +36,9 @@ Then open `http://localhost:8000`.
 
 This can happen between an official release and the next maintained data
 update. Check the app's **Comparación disponible** line for the months it
-contains. Pages republishes the committed, validated dataset after each push to
-`main` and on a monthly schedule. It does not collect or parse a new source
-file.
+contains. Automatic collection runs on the 1st, 5th, and 10th. If a release is
+still missing, check Actions for download errors, validation failures, or a
+missing intervening month that needs recovery.
 
 ## A value differs from another system
 

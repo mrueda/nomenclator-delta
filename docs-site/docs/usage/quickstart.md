@@ -73,7 +73,7 @@ official information before making an operational decision. The Ministry may
 have published a newer release since this site was updated.
 
 The **Comparación disponible** line tells you exactly which months this site
-contains. The site is republished after every push to `main` and by a monthly
-scheduled run. Neither process fetches a new Ministry release automatically.
+contains. Automatic checks on the 1st, 5th, and 10th look for a new Ministry
+release. A release appears only after collection and validation succeed.
 
 Next: [Interpreting changes](reading-changes.md).
