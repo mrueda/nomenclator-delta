@@ -42,7 +42,10 @@
             <span class="period-loading">Cargando…</span>
           </div>
           <small id="datasetStatus">Preparando el índice de búsqueda</small>
-          <p id="coverageWarning" class="coverage-warning" role="status" hidden></p>
+          <div id="coverageWarning" class="coverage-warning" hidden>
+            <p id="coverageSummary"></p>
+            <details><summary>Más información</summary><p>No se puede determinar en qué mes se produjo cada cambio ni detectar cambios intermedios que se hayan revertido. No se han reconstruido los datos del mes ausente.</p></details>
+          </div>
         </div>
       </section>
 
@@ -51,9 +54,10 @@
         <div class="search-row">
           <span class="search-icon" aria-hidden="true">⌕</span>
           <input id="searchInput" type="search" autocomplete="off" placeholder="Ej. 700579, brivaracetam, STADA…">
-          <button id="clearSearch" type="button" aria-label="Restablecer búsqueda, filtros, periodo y selección">Restablecer</button>
+          <button id="clearSearch" type="button" title="Restablecer búsqueda, filtros, periodo y selección" aria-label="Restablecer búsqueda, filtros, periodo y selección">Restablecer</button>
         </div>
         <div class="filter-row">
+          <button id="exportCsv" type="button" disabled title="Descargar todos los resultados filtrados, no solo los visibles">Descargar CSV</button>
           <label>
             <span>Tipo de cambio</span>
             <select id="changeFilter">

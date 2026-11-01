@@ -14,6 +14,7 @@
     loadingTransition: null,
     view: "changes",
     selectedCn: null,
+    filteredProducts: [],
   };
 
   const els = {};
@@ -47,6 +48,7 @@
   }
 
   function bindEvents() {
+    document.getElementById("exportCsv").addEventListener("click", exportFilteredCsv);
     els.searchInput.addEventListener("input", render);
     els.clearSearch.addEventListener("click", resetApplication);
     els.changeFilter.addEventListener("change", render);
@@ -64,6 +66,7 @@
   }
 
   async function resetApplication() {
+    els.periodTabs.scrollLeft = 0;
     const latestTransition = state.transitions[state.transitions.length - 1];
     els.searchInput.value = "";
     els.changeFilter.value = "";
@@ -96,6 +99,7 @@
     if (!state.transitions.includes(transition)) return;
     const previous = state.transition;
     state.loadingTransition = transition;
+    document.getElementById("exportCsv").disabled = true;
     els.periodTabs.setAttribute("aria-busy", "true");
     els.datasetStatus.textContent = "Cargando la comparación…";
     renderPeriodTabs();
@@ -130,6 +134,7 @@
     } finally {
       if (state.loadingTransition === transition) {
         state.loadingTransition = null;
+        document.getElementById("exportCsv").disabled = !state.filteredProducts.length;
         els.periodTabs.setAttribute("aria-busy", "false");
         renderPeriodTabs();
       }
@@ -183,7 +188,7 @@
       const buttons = entry[1].map(function (transition) {
         const payload = state.transitionPayloads.get(transition);
         const count = payload && payload.summary ? Number(payload.summary.change_events || 0) : null;
-        const countText = count === null ? "" : ` (${formatNumber(count)})`;
+        const countText = (count === null ? "" : ` (${formatNumber(count)})`) + (transition === state.transitions[state.transitions.length - 1] ? '<span class="latest-badge">Último disponible</span>' : "");
         const description = transitionDescription(transition, count);
         const active = transition === state.transition;
         const loading = transition === state.loadingTransition;
@@ -228,7 +233,8 @@
     }
     const warning = document.getElementById("coverageWarning");
     warning.hidden = missing.length === 0;
-    warning.textContent = missing.length ? `Sin datos de ${missing.join(", ")}. Se comparan ${formatMonth(state.summary.from_snapshot)} y ${formatMonth(state.summary.to_snapshot)}: diferencias acumuladas, no cambios de un solo mes. No se puede determinar en qué mes se produjo cada cambio ni detectar cambios intermedios que se hayan revertido.` : "";
+    document.getElementById("coverageSummary").textContent = missing.length ? `Sin datos de ${missing.join(", ")}. Comparación acumulada: ${formatMonth(state.summary.from_snapshot)} → ${formatMonth(state.summary.to_snapshot)}.` : "";
+    warning.querySelector("details").open = false;
     const visibleChanges = state.summary.added + state.summary.removed + state.summary.changed_products;
     const priceChanges = (state.summary.counts_by_type || {}).PRICE_CHANGED || 0;
     els.datasetStatus.textContent = `${formatNumber(state.summary.to_product_count)} presentaciones en ${formatMonth(state.summary.to_snapshot)} · ${formatNumber(state.summary.changed_products)} modificadas · ${formatNumber(priceChanges)} cambios de precio`;
@@ -253,8 +259,40 @@
       return query.split(/\s+/).every(function (term) { return haystack.includes(term); });
     });
     filtered.sort(sortProducts);
+    state.filteredProducts = filtered;
+    document.getElementById("exportCsv").disabled = !filtered.length || Boolean(state.loadingTransition);
     renderViewHeading(filtered.length, Boolean(query));
     renderResults(filtered);
+  }
+
+  function exportFilteredCsv() {
+    if (state.loadingTransition || !state.summary || !state.filteredProducts.length) return;
+    const rows = [["Código Nacional", "Nombre (índice más reciente)", "Laboratorio (índice más reciente)", "Periodo inicial", "Periodo final", "Cambios observados", "Advertencia de cobertura"]];
+    state.filteredProducts.forEach(function (product) {
+      const labels = (state.eventsByCn.get(product.cn) || [])
+        .filter(function (event) { return !els.changeFilter.value || event.change_type === els.changeFilter.value; })
+        .map(function (event) { return event.change_label_es; });
+      rows.push([product.cn, product.medicine_name, product.laboratory,
+        state.summary.from_snapshot, state.summary.to_snapshot,
+        Array.from(new Set(labels)).join("; ") || "Sin cambios observados",
+        document.getElementById("coverageSummary").textContent]);
+    });
+    const csv = rows.map(function (row) {
+      return row.map(function (value) {
+        let text = String(value == null ? "" : value);
+        // Prevent spreadsheet formula execution in source-controlled text fields.
+        if (/^[\s]*[=+@-]/.test(text) || /^[\t\r\n]/.test(text)) text = "'" + text;
+        return '"' + text.replace(/"/g, '""') + '"';
+      }).join(";");
+    }).join("\r\n");
+    const url = URL.createObjectURL(new Blob(["\uFEFF", csv], { type: "text/csv;charset=utf-8" }));
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `nomenclator-${state.summary.from_snapshot}-${state.summary.to_snapshot}.csv`;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    window.setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
   }
 
   function matchesView(events, hasQuery) {

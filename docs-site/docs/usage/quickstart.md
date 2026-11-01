@@ -14,7 +14,12 @@ many presentations are in the later file.
 Use the compact period pills—such as **Jun → Jul 2026 (308)**—to change the
 comparison. The number in parentheses is the total number of changes found for
 that period, including additions and removals. The latest period is selected by
-default.
+default, appears first, and is marked **Último disponible**.
+
+The app normally compares consecutive monthly releases. October 2026 is the
+one-time exception: September is compared directly with November. A short
+warning identifies the gap; **Más información** explains why these accumulated
+differences cannot be assigned to either month individually.
 
 To get back to the starting screen, select **Restablecer**. This returns to the
 latest comparison and clears the search, filters, **Cambios/Altas/Bajas** view,
@@ -50,6 +55,18 @@ The top navigation changes the result set:
 
 Use **Tipo de cambio** to select one kind of change, such as *Cambio de precio*
 or *Cambio de estado*.
+
+## Download the filtered results
+
+Select **Descargar CSV** to download all matching presentations, including those
+beyond the first 100 shown on screen. The file follows the current search,
+view, and change-type filter; the button is disabled when there are no matches.
+
+The UTF-8, semicolon-separated file contains one row per presentation, with
+Código Nacional, name and laboratory from the latest search index, the two
+compared months, change labels, and any missing-month warning. It is a summary,
+not a full export of before-and-after values. Names and laboratories may be newer
+than a historical comparison; use the detail panel to inspect historical values.
 
 ## Inspect the timeline
 

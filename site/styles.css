@@ -77,6 +77,12 @@ main { width: min(1280px, calc(100% - 2rem)); margin: 0 auto; }
 .period-card { padding: 0.9rem 1rem; border: 1px solid var(--line); border-left: 3px solid #d58a3a; border-radius: 10px; background: var(--surface); box-shadow: 0 4px 14px rgba(24, 32, 42, 0.05); }
 .period-card > span, .period-card small { display: block; color: var(--muted); font-size: 0.78rem; }
 .coverage-warning { margin: 0.65rem 0 0; padding: 0.65rem 0.8rem; border-left: 3px solid var(--warning); background: var(--warning-soft); color: var(--warning); font-size: 0.8rem; line-height: 1.5; }
+.coverage-warning p { margin: 0; }
+.coverage-warning details { margin-top: 0.35rem; }
+.coverage-warning summary { cursor: pointer; text-decoration: underline; }
+.latest-badge { font-size: 0.65rem; font-weight: 400; border-left: 1px solid currentColor; padding-left: 0.4rem; }
+#exportCsv { order: 1; align-self: end; padding: 0.62rem 0.8rem; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--ink); cursor: pointer; }
+#exportCsv:disabled { opacity: 0.5; cursor: default; }
 .period-tabs { display: flex; gap: 0.65rem; margin: 0.55rem -0.35rem 0.45rem; padding: 0.15rem 0.35rem 0.35rem; overflow-x: auto; overscroll-behavior-inline: contain; scrollbar-width: thin; }
 .period-year-group, .period-pill-row { display: flex; align-items: center; gap: 0.4rem; flex: 0 0 auto; }
 .period-year-group + .period-year-group { padding-left: 0.65rem; border-left: 1px solid var(--line); }
