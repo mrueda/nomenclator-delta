@@ -114,6 +114,9 @@ main { width: min(1280px, calc(100% - 2rem)); margin: 0 auto; }
 .section-heading h2 { margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: clamp(1.6rem, 3vw, 2.25rem); font-weight: 700; }
 #resultCount { margin: 0; color: var(--muted); font-size: 0.82rem; }
 .results { display: grid; gap: 0.75rem; }
+.results-period { margin: 0.4rem 0 0; color: var(--muted); font-size: 0.85rem; }
+.results-pagination { margin-top: 1rem; text-align: center; color: var(--muted); font-size: 0.85rem; }
+#showMore { padding: 0.65rem 1.2rem; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--ink); cursor: pointer; }
 .result-card { width: 100%; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 1rem; align-items: center; padding: 1rem; border: 1px solid var(--line); border-radius: 9px; text-align: left; color: inherit; background: var(--surface); cursor: pointer; transition: 160ms ease; }
 .result-card:hover, .result-card.is-selected { border-color: #7f9f95; background: white; box-shadow: 0 6px 18px rgba(24, 32, 42, 0.07); }
 .result-card.is-selected { box-shadow: inset 3px 0 0 var(--primary), 0 6px 18px rgba(24, 32, 42, 0.07); }

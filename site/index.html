@@ -73,10 +73,15 @@
             <div>
               <p class="eyebrow" id="viewEyebrow">Cambios materiales</p>
               <h2 id="resultsTitle">Presentaciones con cambios</h2>
+              <p id="resultsPeriod" class="results-period"></p>
             </div>
             <p id="resultCount" aria-live="polite">—</p>
           </div>
           <div id="results" class="results" aria-live="polite"></div>
+          <div class="results-pagination">
+            <p id="shownCount" aria-live="polite"></p>
+            <button id="showMore" type="button" aria-controls="results" hidden>Mostrar más</button>
+          </div>
         </div>
 
         <aside id="detailPanel" class="detail-panel" aria-live="polite">

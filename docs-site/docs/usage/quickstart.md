@@ -40,8 +40,10 @@ Useful searches include:
 - the offering laboratory name.
 
 The default **Cambios** view shows only presentations with a change in the
-selected period. If a search returns more than 100 matches, the app asks you to
-make it more specific.
+selected period. The compared months also appear above the results. The app
+initially shows up to 100 matches; **Mostrar más** reveals the next 100 until
+all matches are visible. Changing the search, filter, view, or period resets
+the list to the first 100. Selecting a presentation keeps the expanded list.
 
 ## Refine the results
 

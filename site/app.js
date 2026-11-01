@@ -15,6 +15,8 @@
     view: "changes",
     selectedCn: null,
     filteredProducts: [],
+    visibleCount: 100,
+    resultsKey: null,
   };
 
   const els = {};
@@ -48,6 +50,13 @@
   }
 
   function bindEvents() {
+    document.getElementById("showMore").addEventListener("click", function () {
+      const previousCount = state.visibleCount;
+      state.visibleCount += 100;
+      renderResults(state.filteredProducts);
+      const firstNew = els.results.querySelectorAll(".result-card")[previousCount];
+      if (firstNew) firstNew.focus({ preventScroll: true });
+    });
     document.getElementById("exportCsv").addEventListener("click", exportFilteredCsv);
     els.searchInput.addEventListener("input", render);
     els.clearSearch.addEventListener("click", resetApplication);
@@ -66,6 +75,7 @@
   }
 
   async function resetApplication() {
+    state.visibleCount = 100;
     els.periodTabs.scrollLeft = 0;
     const latestTransition = state.transitions[state.transitions.length - 1];
     els.searchInput.value = "";
@@ -245,8 +255,12 @@
   }
 
   function render() {
+    if (!state.summary) return;
     const query = normalizeSearch(els.searchInput.value);
     const changeType = els.changeFilter.value;
+    const resultsKey = JSON.stringify([state.transition, state.view, query, changeType]);
+    if (resultsKey !== state.resultsKey) state.visibleCount = 100;
+    state.resultsKey = resultsKey;
     const filtered = state.products.filter(function (product) {
       const events = state.eventsByCn.get(product.cn) || [];
       if (!matchesView(events, Boolean(query))) return false;
@@ -262,6 +276,7 @@
     state.filteredProducts = filtered;
     document.getElementById("exportCsv").disabled = !filtered.length || Boolean(state.loadingTransition);
     renderViewHeading(filtered.length, Boolean(query));
+    document.getElementById("resultsPeriod").textContent = `${formatMonth(state.summary.from_snapshot)} → ${formatMonth(state.summary.to_snapshot)}`;
     renderResults(filtered);
   }
 
@@ -326,12 +341,15 @@
   }
 
   function renderResults(products) {
+    const shown = Math.min(state.visibleCount, products.length);
+    document.getElementById("showMore").hidden = shown >= products.length;
+    document.getElementById("shownCount").textContent = products.length ? `Se muestran ${formatNumber(shown)} de ${formatNumber(products.length)} resultados.` : "";
     els.results.innerHTML = "";
     if (!products.length) {
       els.results.innerHTML = '<p class="empty">No hay presentaciones que coincidan con la búsqueda y los filtros seleccionados.</p>';
       return;
     }
-    products.slice(0, 100).forEach(function (product) {
+    products.slice(0, state.visibleCount).forEach(function (product) {
       const events = state.eventsByCn.get(product.cn) || [];
       const button = document.createElement("button");
       button.type = "button";
@@ -351,12 +369,6 @@
       button.addEventListener("click", function () { openProduct(product); });
       els.results.appendChild(button);
     });
-    if (products.length > 100) {
-      const note = document.createElement("p");
-      note.className = "empty";
-      note.textContent = `Se muestran los primeros 100 de ${formatNumber(products.length)} resultados. Acota la búsqueda para ver una presentación concreta.`;
-      els.results.appendChild(note);
-    }
   }
 
   async function openProduct(product) {
