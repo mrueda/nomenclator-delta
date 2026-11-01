@@ -172,7 +172,8 @@
     }));
     const showYears = years.size > 1;
     const groups = new Map();
-    state.transitions.forEach(function (transition) {
+    // Display newest first without changing the chronological data used by reset.
+    state.transitions.slice().reverse().forEach(function (transition) {
       const year = transitionParts(transition).to.split("-")[0];
       if (!groups.has(year)) groups.set(year, []);
       groups.get(year).push(transition);
