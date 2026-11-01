@@ -27,8 +27,8 @@
       "changesNavCount", "addedNavCount", "removedNavCount",
       "viewEyebrow", "resultsTitle", "resultCount", "results", "detailPanel", "disclaimer"
     ].forEach(function (id) { els[id] = document.getElementById(id); });
-    bindEvents();
     try {
+      bindEvents();
       const payloads = await Promise.all([
         fetchJson("data/metadata.json"),
         fetchJson("data/indexes/products.json"),
@@ -43,8 +43,8 @@
       openLinkedProduct();
     } catch (error) {
       els.datasetStatus.textContent = "No se pudieron cargar los datos";
-      els.periodSelect.setAttribute("aria-busy", "false");
-      els.results.innerHTML = '<p class="error">Los datos estáticos no están disponibles. Vuelve a intentarlo más tarde.</p>';
+      if (els.periodSelect) els.periodSelect.setAttribute("aria-busy", "false");
+      els.results.innerHTML = '<p class="error">No se pudo iniciar la aplicación. Recarga la página; si el problema continúa, vuelve a intentarlo más tarde.</p>';
     }
   }
 

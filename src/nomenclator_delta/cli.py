@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import shutil
 import sys
@@ -87,3 +88,13 @@ def build_dist(site: Path, data: Path, output: Path) -> None:
         shutil.rmtree(output)
     shutil.copytree(site, output)
     shutil.copytree(data, output / "data")
+    # HTML and its assets must stay paired across deployments/browser caches.
+    index = output / "index.html"
+    html = index.read_text(encoding="utf-8")
+    for name in ("app.js", "styles.css"):
+        asset = output / name
+        digest = hashlib.sha256(asset.read_bytes()).hexdigest()[:16]
+        versioned = f"{asset.stem}.{digest}{asset.suffix}"
+        asset.rename(output / versioned)
+        html = html.replace(f'"{name}"', f'"{versioned}"')
+    index.write_text(html, encoding="utf-8")
