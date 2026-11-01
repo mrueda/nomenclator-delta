@@ -16,67 +16,26 @@
   </p>
 </div>
 
-## About
-
 `nomenclator-delta` compares available monthly releases of the Ministerio de
 Sanidad's *Nomenclátor de Facturación*: its database of medicines and health
 products included in the Sistema Nacional de Salud (SNS) pharmaceutical benefit
-and dispensed through community pharmacies. The static browser app finds changes
-by Código Nacional, medicine name, active ingredient, or laboratory. There is no
-backend, account, tracking service, or patient data.
+and dispensed through community pharmacies. Find changes by Código Nacional,
+medicine name, active ingredient, or laboratory—without an account.
 
-The pharmacy-facing app is entirely in Spanish and uses official Ministerio de
-Sanidad terminology. Source code, data keys, tests, README, and documentation
-are in English.
+The app is in Spanish; documentation and source code are in English.
 
-## Quick start
+## Start here
 
-```bash
-python3 -m pip install -e ".[test]"
-pytest
-python3 -m nomenclator_delta validate data
-python3 -m nomenclator_delta dist
-python3 -m http.server 8000 --directory dist
-```
+- [Using the app](https://mrueda.github.io/nomenclator-delta/docs/usage/quickstart)
+- [Understanding changes and limitations](https://mrueda.github.io/nomenclator-delta/docs/usage/reading-changes)
+- [Monthly updates](https://mrueda.github.io/nomenclator-delta/docs/operations/monthly-update)
+- [Local setup and CLI](https://mrueda.github.io/nomenclator-delta/docs/reference/cli)
+- [Essential data notes](DATA_NOTES.md)
 
-Open `http://localhost:8000`.
-
-To run the complete documentation site with the app embedded at `/app/`:
-
-```bash
-cd docs-site
-npm ci
-npm start
-```
-
-## Documentation
-
-The [documentation site](https://mrueda.github.io/nomenclator-delta/) explains
-how to use the app and how the data is produced. Maintainers can start with the
-[monthly update runbook](docs-site/docs/operations/monthly-update.md).
-
-Detailed observations about the Ministry source files are kept in
-[DATA_NOTES.md](DATA_NOTES.md).
-
-## Repository map
-
-```text
-src/nomenclator_delta/  collection, normalization, diffing, and validation
-data/                    committed deterministic snapshots and change history
-site/                    Spanish static application
-docs-site/               English documentation and Pages build
-tests/                   unit and integration tests
-```
-
-## Source and scope
-
-The data authority is the Ministerio de Sanidad's public [Nomenclátor de
-facturación](https://www.sanidad.gob.es/profesionales/nomenclator.do).
-
-This independent project is not affiliated with or endorsed by the Ministerio
-de Sanidad. It reports differences between source files; it does not provide
-dispensing, reimbursement, substitution, prescribing, treatment, or clinical
-advice. The official Nomenclátor and related publications remain authoritative.
+This independent project is not affiliated with the Ministerio de Sanidad.
+It reports differences, not clinical or dispensing advice. The
+[official Nomenclátor](https://www.sanidad.gob.es/profesionales/nomenclator.do)
+remains authoritative.
 
 ## License
 
